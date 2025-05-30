@@ -136,14 +136,20 @@
       font-size: 0.95rem;
     }
 
-    .memory-toggle {
+    .toggles {
       margin: 1rem auto;
-      font-size: 0.9rem;
-      color: #555;
+      max-width: 600px;
+      font-size: 0.95rem;
+      color: #444;
     }
 
-    .memory-toggle input[type="checkbox"] {
-      margin-right: 0.5rem;
+    .toggles label {
+      display: block;
+      margin: 0.5rem 0;
+    }
+
+    .toggles input[type="checkbox"] {
+      margin-right: 0.6rem;
       transform: scale(1.2);
     }
 
@@ -223,11 +229,6 @@
   <div class="agent-box">
     <div class="controls">
       <select>
-        <option selected disabled>AI Mode</option>
-        <option>Assist</option>
-        <option>Agent</option>
-      </select>
-      <select>
         <option selected disabled>Insight Layer</option>
         <option>Market</option>
         <option>Business</option>
@@ -244,13 +245,14 @@
     <input type="text" placeholder="Ask AI anything..." />
     <button>Start</button>
 
-    <div class="memory-toggle">
-      <label><input type="checkbox" id="memoryToggle" /> Enable Insight Memory</label>
+    <div class="toggles">
+      <label><input type="checkbox" id="agenticToggle" /> Enable Agentic Mode</label>
+      <label><input type="checkbox" id="memoryToggle" disabled /> Enable Insight Memory</label>
     </div>
 
     <div class="memory-alert" id="memoryAlert">
       <strong>🔒 Sign in to use Insight Memory</strong><br/>
-      This feature is available for logged-in Pro users.<br/>
+      This feature is available for Pro users only.<br/>
       <button onclick="window.location.href='/login'">Sign In & Upgrade</button>
     </div>
   </div>
@@ -261,12 +263,25 @@
 </div>
 
 <script>
-  document.getElementById('memoryToggle').addEventListener('change', function () {
-    const alertBox = document.getElementById('memoryAlert');
+  const agenticToggle = document.getElementById('agenticToggle');
+  const memoryToggle = document.getElementById('memoryToggle');
+  const memoryAlert = document.getElementById('memoryAlert');
+
+  agenticToggle.addEventListener('change', function () {
     if (this.checked) {
-      alertBox.style.display = 'block';
+      memoryToggle.disabled = false;
     } else {
-      alertBox.style.display = 'none';
+      memoryToggle.checked = false;
+      memoryToggle.disabled = true;
+      memoryAlert.style.display = 'none';
+    }
+  });
+
+  memoryToggle.addEventListener('change', function () {
+    if (this.checked) {
+      memoryAlert.style.display = 'block';
+    } else {
+      memoryAlert.style.display = 'none';
     }
   });
 </script>
