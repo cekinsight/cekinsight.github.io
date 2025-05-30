@@ -1,47 +1,275 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Cekinsight is a data intelligence platform delivering curated insight across life, business, and markets.">
-  <title>Cekinsight – Curated Insight Across Life, Business, and Markets</title>
+  <title>Cekinsight – Curated Insight & Agentic AI</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #222;
+    }
+
+    header {
+      background: #fff;
+      padding: 1rem 2rem;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .brand img {
+      height: 32px;
+    }
+
+    nav a {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem 2rem;
+      background: #fff;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: auto;
+      color: #444;
+    }
+
+    .apps {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 2.5rem auto;
+      max-width: 900px;
+    }
+
+    .app-card {
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 1.5rem;
+      background: #fff;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: all 0.2s ease;
+    }
+
+    .app-card img {
+      height: 40px;
+      margin-bottom: 0.5rem;
+    }
+
+    .app-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    }
+
+    .app-card a {
+      display: block;
+      margin-top: 0.8rem;
+      color: #0041c2;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .agent-preview {
+      background: #fafafa;
+      padding: 2rem;
+      border-top: 1px solid #ddd;
+      text-align: center;
+    }
+
+    .agent-box {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      max-width: 650px;
+      margin: auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .agent-box input {
+      width: 100%;
+      padding: 0.7rem;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .controls select {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 0.95rem;
+    }
+
+    .memory-toggle {
+      margin: 1rem auto;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .memory-toggle input[type="checkbox"] {
+      margin-right: 0.5rem;
+      transform: scale(1.2);
+    }
+
+    .memory-alert {
+      background: #fff3cd;
+      border: 1px solid #ffeeba;
+      color: #856404;
+      padding: 1rem;
+      border-radius: 8px;
+      max-width: 500px;
+      margin: 1rem auto;
+      display: none;
+    }
+
+    .memory-alert button {
+      background: #0041c2;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      margin-top: 0.8rem;
+      cursor: pointer;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 2rem;
+      color: #888;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Cekinsight</h1>
-    <p>Curated insight across life, business, and markets.</p>
-    <a href="/waitlist">Join Waitlist</a> |
-    <a href="/login">Login</a>
-  </header>
-  <main>
-    <section>
-      <h2>Explore Our Pillars</h2>
-      <div>
-        <h3><a href="/life">Life</a></h3>
-        <p>Build better habits. Improve wellness. Understand yourself.</p>
-      </div>
-      <div>
-        <h3><a href="/business">Business</a></h3>
-        <p>Track competitors. Discover opportunity. See the big picture.</p>
-      </div>
-      <div>
-        <h3><a href="/market">Market</a></h3>
-        <p>Decode market dynamics. Strategy made simple.</p>
-      </div>
-    </section>
-    <section>
-      <h2>For Whom?</h2>
-      <ul>
-        <li><a href="/for-traders">For Traders</a></li>
-        <li><a href="/for-founders">For Founders</a></li>
-        <li><a href="/for-teams">For Teams</a></li>
-        <li><a href="/for-systems">For Systems</a></li>
-      </ul>
-    </section>
-  </main>
-  <footer>
-    <p>© 2025 Cekinsight – All rights reserved</p>
-  </footer>
+
+<header>
+  <div class="brand">
+    <img src="logo-cekinsight.png" alt="Cekinsight Logo">
+    <strong>Cekinsight</strong>
+  </div>
+  <nav>
+    <a href="/">Home</a>
+    <a href="#apps">Apps</a>
+    <a href="#ai">Agentic AI</a>
+    <a href="https://market.cekinsight.com">Login</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Strategic Clarity, Powered by Agentic AI</h1>
+  <p>Cekinsight delivers curated insights and intelligent systems across market, business, and life—designed for thinkers, builders, and decision-makers.</p>
+</section>
+
+<div class="apps" id="apps">
+  <div class="app-card">
+    <img src="icon-market.png" alt="Market Icon">
+    <h3>Market</h3>
+    <p>Signals & strategy for market participants</p>
+    <a href="https://market.cekinsight.com">Go to Market →</a>
+  </div>
+  <div class="app-card">
+    <img src="icon-business.png" alt="Business Icon">
+    <h3>Business</h3>
+    <p>Growth playbooks & startup intelligence</p>
+    <a href="https://business.cekinsight.com">Go to Business →</a>
+  </div>
+  <div class="app-card">
+    <img src="icon-life.png" alt="Life Icon">
+    <h3>Life</h3>
+    <p>Blueprints for clarity, balance, and purpose</p>
+    <a href="https://life.cekinsight.com">Go to Life →</a>
+  </div>
+</div>
+
+<section class="agent-preview" id="ai">
+  <h2>Try the Agentic AI Experience</h2>
+  <p>Ask anything across market, business, or life. This is your personal insight assistant.</p>
+  <div class="agent-box">
+    <div class="controls">
+      <select>
+        <option selected disabled>AI Mode</option>
+        <option>Assist</option>
+        <option>Agent</option>
+      </select>
+      <select>
+        <option selected disabled>Insight Layer</option>
+        <option>Market</option>
+        <option>Business</option>
+        <option>Life</option>
+      </select>
+      <select>
+        <option selected disabled>Output Depth</option>
+        <option>Brief</option>
+        <option>Balanced</option>
+        <option>In-Depth</option>
+      </select>
+    </div>
+
+    <input type="text" placeholder="Ask AI anything..." />
+    <button>Start</button>
+
+    <div class="memory-toggle">
+      <label><input type="checkbox" id="memoryToggle" /> Enable Insight Memory</label>
+    </div>
+
+    <div class="memory-alert" id="memoryAlert">
+      <strong>🔒 Sign in to use Insight Memory</strong><br/>
+      This feature is available for logged-in Pro users.<br/>
+      <button onclick="window.location.href='/login'">Sign In & Upgrade</button>
+    </div>
+  </div>
+</section>
+
+<div class="footer">
+  © 2025 Cekinsight — Powered by proprietary insight engine
+</div>
+
+<script>
+  document.getElementById('memoryToggle').addEventListener('change', function () {
+    const alertBox = document.getElementById('memoryAlert');
+    if (this.checked) {
+      alertBox.style.display = 'block';
+    } else {
+      alertBox.style.display = 'none';
+    }
+  });
+</script>
+
 </body>
 </html>
