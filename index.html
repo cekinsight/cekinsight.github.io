@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +16,7 @@
       --select-bg: #e0e0e0;
       --select-text: #000;
     }
+
     body.light {
       --bg-color: #f9f9f9;
       --text-color: #000;
@@ -25,17 +27,24 @@
       --select-bg: #f0f0f0;
       --select-text: #000;
     }
+
     body {
-      font-family: 'Segoe UI', 'Apple Color Emoji', 'Noto Color Emoji', 'Segoe UI Emoji', sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
       background: var(--bg-color);
       color: var(--text-color);
       transition: background 0.3s, color 0.3s;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      word-spacing: normal;
+      letter-spacing: normal;
     }
+
     .emoji {
       font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
     }
+
     header {
       background: var(--segment-bg);
       color: var(--text-color);
@@ -70,10 +79,12 @@
       background: #04d1c1;
       color: #000;
     }
+
     .hero {
       padding: 3rem 2rem 1rem;
       text-align: center;
     }
+
     .segments {
       display: flex;
       justify-content: center;
@@ -107,6 +118,7 @@
     .segment:hover {
       background: #2a2a2a;
     }
+
     .cta {
       text-align: center;
       margin-top: 3rem;
@@ -128,6 +140,7 @@
       font-size: 1rem;
       cursor: pointer;
     }
+
     .prompt-section {
       max-width: 900px;
       margin: 2rem auto 4rem;
@@ -145,6 +158,7 @@
     .prompt-box {
       position: relative;
     }
+
     textarea {
       width: 100%;
       height: 160px;
@@ -154,10 +168,12 @@
       border: none;
       border-radius: 10px;
       padding: 1rem;
+      padding-right: 110px;
       box-sizing: border-box;
       background: var(--textarea-bg);
       color: var(--textarea-text);
     }
+
     .toggle-top-right {
       position: absolute;
       top: 10px;
@@ -180,17 +196,21 @@
     .mode-toggle {
       padding: 0.5rem 1.2rem;
       border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: bold;
+      font-size: 0.9rem; /* disamakan dengan tombol Start dan Dropdown */
+      font-weight: 500;
       background: #444;
       color: #fff;
       cursor: pointer;
       border: none;
+      font-family: 'Segoe UI', sans-serif;
+      text-transform: none; /* hilangkan capslock */
     }
+
     .mode-toggle.on {
       background: linear-gradient(to right, #04d1c1, #51a2e6);
       color: white;
     }
+
     .prompt-controls {
       display: flex;
       gap: 1rem;
@@ -210,12 +230,14 @@
       font-size: 0.95rem;
       min-width: 140px;
     }
+
     .footer {
       text-align: center;
       font-size: 0.9rem;
       padding: 2rem 1rem;
       color: #888;
     }
+
     @media (max-width: 640px) {
       .prompt-controls {
         flex-direction: column;
@@ -234,142 +256,148 @@
         width: 100%;
         text-align: center;
       }
+      .toggle-top-right button {
+        font-size: 0.7rem;
+        padding: 0.4rem 0.8rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="brand">
-      <img src="logo-cekinsight.png" alt="Logo">
-      <strong>Cekinsight</strong>
-    </div>
-    <div class="toggles">
-      <button id="langEnToggle" class="toggle-button on">EN</button>
-      <button id="langIdToggle" class="toggle-button">ID</button>
-      <button id="themeToggle" class="toggle-button">☀</button>
-    </div>
-  </header>
+<!-- The rest of the body content would be the same as user's HTML -->
 
-  <section class="hero">
-    <h1 id="heroTitle">Strategic Clarity, Powered by Agentic AI</h1>
-    <p id="heroDesc">Cekinsight delivers curated insights and intelligent systems across market, business, and life.</p>
-  </section>
-
-  <div class="segments">
-    <a class="segment" href="https://market.cekinsight.com" target="_blank">
-      <img src="icon-market.png" alt="Market Icon">
-      <h3>Market</h3>
-      <p id="marketDesc">Crypto, stocks, and macro signals</p>
-    </a>
-    <a class="segment" href="https://business.cekinsight.com" target="_blank">
-      <img src="icon-business.png" alt="Business Icon">
-      <h3>Business</h3>
-      <p id="businessDesc">Startup growth & founder strategy</p>
-    </a>
-    <a class="segment" href="https://life.cekinsight.com" target="_blank">
-      <img src="icon-life.png" alt="Life Icon">
-      <h3>Life</h3>
-      <p id="lifeDesc">Balance, clarity, and purpose insights</p>
-    </a>
+<header>
+  <div class="brand">
+    <img src="logo-cekinsight.png" alt="Logo">
+    <strong>Cekinsight</strong>
   </div>
-
-  <div class="cta">
-    <h2 id="ctaTitle"><span class="emoji">🚀</span> Get Notified at Launch</h2>
-    <p id="ctaDesc">Be the first to explore Cekinsight’s intelligent tools.</p>
-    <button><strong id="ctaBtn">Join the Waitlist</strong></button>
+  <div class="toggles">
+    <button id="langEnToggle" class="toggle-button on">EN</button>
+    <button id="langIdToggle" class="toggle-button">ID</button>
+    <button id="themeToggle" class="toggle-button">☀</button>
   </div>
+</header>
 
-  <section class="prompt-section">
-    <h2 id="promptTitle">Try the Agentic AI Experience</h2>
-    <p id="promptDesc">Ask anything or delegate a task.</p>
+<section class="hero">
+  <h1 id="heroTitle">Strategic Clarity, Powered by Agentic AI</h1>
+  <p id="heroDesc">Cekinsight delivers curated insights and intelligent systems across market, business, and life.</p>
+</section>
 
-    <div class="prompt-container">
-      <div class="prompt-box">
-        <textarea id="promptInput" placeholder="Ask AI anything..."></textarea>
-        <div class="toggle-top-right">
-          <button id="agentToggle" class="mode-toggle">AGENT MODE OFF</button>
-        </div>
-        <button class="start-btn">Start</button>
+<div class="segments">
+  <a class="segment" href="https://market.cekinsight.com" target="_blank">
+    <img src="icon-market.png" alt="Market Icon">
+    <h3>Market</h3>
+    <p id="marketDesc">Crypto, stocks, and macro signals</p>
+  </a>
+  <a class="segment" href="https://business.cekinsight.com" target="_blank">
+    <img src="icon-business.png" alt="Business Icon">
+    <h3>Business</h3>
+    <p id="businessDesc">Startup growth & founder strategy</p>
+  </a>
+  <a class="segment" href="https://life.cekinsight.com" target="_blank">
+    <img src="icon-life.png" alt="Life Icon">
+    <h3>Life</h3>
+    <p id="lifeDesc">Balance, clarity, and purpose insights</p>
+  </a>
+</div>
+
+<div class="cta">
+  <h2 id="ctaTitle"><span class="emoji">🚀</span> Get Notified at Launch</h2>
+  <p id="ctaDesc">Be the first to explore Cekinsight’s intelligent tools.</p>
+  <button><strong id="ctaBtn">Join the Waitlist</strong></button>
+</div>
+
+<section class="prompt-section">
+  <h2 id="promptTitle">Try the Agentic AI Experience</h2>
+  <p id="promptDesc">Ask anything or delegate a task.</p>
+
+  <div class="prompt-container">
+    <div class="prompt-box">
+      <textarea id="promptInput" placeholder="Ask AI anything..."></textarea>
+      <div class="toggle-top-right">
+        <button id="agentToggle" class="mode-toggle">Agent Mode Off</button>
       </div>
-
-      <div class="prompt-controls">
-        <div class="prompt-left">
-          <select id="insightLayer">
-            <option disabled selected>Insight Layer</option>
-            <option value="market">Market</option>
-            <option value="business">Business</option>
-            <option value="life">Life</option>
-          </select>
-
-          <select id="modelSelect">
-            <option disabled selected>Model</option>
-            <option value="gpt-4">GPT-4</option>
-            <option value="claude">Claude 3</option>
-            <option value="mistral">Mistral</option>
-          </select>
-        </div>
-        <button id="memoryToggle" class="mode-toggle" style="opacity: 0.5; pointer-events: none;">MEMORY MODE OFF</button>
-      </div>
+      <button class="start-btn">Start</button>
     </div>
-  </section>
 
-  <div class="footer">
-    © 2025 Cekinsight — Powered by proprietary insight engine
+    <div class="prompt-controls">
+      <div class="prompt-left">
+        <select id="insightLayer">
+          <option disabled selected>Insight Layer</option>
+          <option value="market">Market</option>
+          <option value="business">Business</option>
+          <option value="life">Life</option>
+        </select>
+
+        <select id="modelSelect">
+          <option disabled selected>Model</option>
+          <option value="gpt-4">GPT-4</option>
+          <option value="claude">Claude 3</option>
+          <option value="mistral">Mistral</option>
+        </select>
+      </div>
+      <button id="memoryToggle" class="mode-toggle" style="opacity: 0.5; pointer-events: none;">Memory Mode Off</button>
+    </div>
   </div>
+</section>
 
-  <script>
-    document.getElementById("themeToggle").addEventListener("click", () => {
-      document.body.classList.toggle("light");
-    });
+<div class="footer">
+  © 2025 Cekinsight — Powered by proprietary insight engine
+</div>
 
-    document.getElementById("langEnToggle").addEventListener("click", () => {
-      location.reload();
-    });
+<script>
+  document.getElementById("themeToggle").addEventListener("click", () => {
+    document.body.classList.toggle("light");
+  });
 
-    document.getElementById("langIdToggle").addEventListener("click", () => {
-      document.getElementById("heroTitle").textContent = "Kejelasan Strategis, Digerakkan oleh Agentic AI";
-      document.getElementById("heroDesc").textContent = "Cekinsight menghadirkan insight terkurasi dan sistem cerdas di market, bisnis, dan kehidupan.";
-      document.getElementById("marketDesc").textContent = "Sinyal crypto, saham, dan makro";
-      document.getElementById("businessDesc").textContent = "Pertumbuhan startup & strategi founder";
-      document.getElementById("lifeDesc").textContent = "Keseimbangan, kejelasan, dan tujuan hidup";
-      document.getElementById("ctaTitle").textContent = "🚀 Dapatkan Notifikasi Peluncuran";
-      document.getElementById("ctaDesc").textContent = "Jadilah yang pertama menjelajahi alat cerdas dari Cekinsight.";
-      document.getElementById("ctaBtn").textContent = "Gabung Daftar Tunggu";
-      document.getElementById("promptTitle").textContent = "Coba Pengalaman AI Agen";
-      document.getElementById("promptDesc").textContent = "Tanyakan apa saja atau delegasikan tugas.";
-      document.getElementById("langEnToggle").classList.remove("on");
-      document.getElementById("langIdToggle").classList.add("on");
-    });
+  document.getElementById("langEnToggle").addEventListener("click", () => {
+    location.reload();
+  });
+  document.getElementById("langIdToggle").addEventListener("click", () => {
+    document.getElementById("heroTitle").textContent = "Kejelasan Strategis, Digerakkan oleh Agentic AI";
+    document.getElementById("heroDesc").textContent = "Cekinsight menghadirkan insight terkurasi dan sistem cerdas di market, bisnis, dan kehidupan.";
+    document.getElementById("marketDesc").textContent = "Sinyal crypto, saham, dan makro";
+    document.getElementById("businessDesc").textContent = "Pertumbuhan startup & strategi founder";
+    document.getElementById("lifeDesc").textContent = "Keseimbangan, kejelasan, dan tujuan hidup";
+    document.getElementById("ctaTitle").textContent = "🚀 Dapatkan Notifikasi Peluncuran";
+    document.getElementById("ctaDesc").textContent = "Jadilah yang pertama menjelajahi alat cerdas dari Cekinsight.";
+    document.getElementById("ctaBtn").textContent = "Gabung Daftar Tunggu";
+    document.getElementById("promptTitle").textContent = "Coba Pengalaman AI Agen";
+    document.getElementById("promptDesc").textContent = "Tanyakan apa saja atau delegasikan tugas.";
+    document.getElementById("langEnToggle").classList.remove("on");
+    document.getElementById("langIdToggle").classList.add("on");
+  });
 
-    const agentToggle = document.getElementById("agentToggle");
-    const memoryToggle = document.getElementById("memoryToggle");
-    const promptInput = document.getElementById("promptInput");
-    const modelSelect = document.getElementById("modelSelect");
+  const agentToggle = document.getElementById("agentToggle");
+  const memoryToggle = document.getElementById("memoryToggle");
+  const promptInput = document.getElementById("promptInput");
+  const modelSelect = document.getElementById("modelSelect");
 
-    agentToggle.addEventListener("click", () => {
-      agentToggle.classList.toggle("on");
-      const isAgentOn = agentToggle.classList.contains("on");
-      agentToggle.textContent = isAgentOn ? "AGENT MODE ON" : "AGENT MODE OFF";
-      promptInput.placeholder = isAgentOn
-        ? "Give Cekinsight a task to solve for you..."
-        : "Ask AI anything...";
-      memoryToggle.style.pointerEvents = isAgentOn ? "auto" : "none";
-      memoryToggle.style.opacity = isAgentOn ? "1" : "0.5";
-      modelSelect.style.display = isAgentOn ? "none" : "inline-block";
-      if (!isAgentOn) {
-        memoryToggle.classList.remove("on");
-        memoryToggle.textContent = "MEMORY MODE OFF";
-      }
-    });
+  agentToggle.addEventListener("click", () => {
+    agentToggle.classList.toggle("on");
+    const isAgentOn = agentToggle.classList.contains("on");
+    agentToggle.textContent = isAgentOn ? "Agent Mode On" : "Agent Mode Off";
+    promptInput.placeholder = isAgentOn
+      ? "Give Cekinsight a task to solve for you..."
+      : "Ask AI anything...";
+    memoryToggle.style.pointerEvents = isAgentOn ? "auto" : "none";
+    memoryToggle.style.opacity = isAgentOn ? "1" : "0.5";
+    modelSelect.style.display = isAgentOn ? "none" : "inline-block";
+    if (!isAgentOn) {
+      memoryToggle.classList.remove("on");
+      memoryToggle.textContent = "Memory Mode Off";
+    }
+  });
 
-    memoryToggle.addEventListener("click", () => {
-      if (memoryToggle.style.pointerEvents !== "none") {
-        memoryToggle.classList.toggle("on");
-        memoryToggle.textContent = memoryToggle.classList.contains("on")
-          ? "MEMORY MODE ON"
-          : "MEMORY MODE OFF";
-      }
-    });
-  </script>
+  memoryToggle.addEventListener("click", () => {
+    if (memoryToggle.style.pointerEvents !== "none") {
+      memoryToggle.classList.toggle("on");
+      memoryToggle.textContent = memoryToggle.classList.contains("on")
+        ? "Memory Mode On"
+        : "Memory Mode Off";
+    }
+  });
+</script>
+
 </body>
 </html>
