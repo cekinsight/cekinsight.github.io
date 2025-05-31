@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +21,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .brand {
@@ -32,11 +34,46 @@
       height: 32px;
     }
 
-    nav a {
-      margin-left: 2rem;
-      text-decoration: none;
+    .nav-toggle {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    nav a, nav select {
+      font-size: 1rem;
       color: #333;
-      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+      }
+      .nav-links.show {
+        display: flex;
+        background: #fff;
+        padding: 1rem;
+        border-top: 1px solid #ddd;
+      }
     }
 
     .hero {
@@ -95,85 +132,6 @@
       text-decoration: none;
     }
 
-    .agent-preview {
-      background: #fafafa;
-      padding: 2rem;
-      border-top: 1px solid #ddd;
-      text-align: center;
-    }
-
-    .agent-box {
-      background: #fff;
-      border: 1px solid #ccc;
-      border-radius: 12px;
-      padding: 1rem 1.5rem;
-      max-width: 650px;
-      margin: auto;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    }
-
-    .agent-box input {
-      width: 100%;
-      padding: 0.7rem;
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-    }
-
-    .controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      margin-bottom: 1rem;
-    }
-
-    .controls select {
-      padding: 0.5rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 0.95rem;
-    }
-
-    .toggles {
-      margin: 1rem auto;
-      max-width: 600px;
-      font-size: 0.95rem;
-      color: #444;
-    }
-
-    .toggles label {
-      display: block;
-      margin: 0.5rem 0;
-    }
-
-    .toggles input[type="checkbox"] {
-      margin-right: 0.6rem;
-      transform: scale(1.2);
-    }
-
-    .memory-alert {
-      background: #fff3cd;
-      border: 1px solid #ffeeba;
-      color: #856404;
-      padding: 1rem;
-      border-radius: 8px;
-      max-width: 500px;
-      margin: 1rem auto;
-      display: none;
-    }
-
-    .memory-alert button {
-      background: #0041c2;
-      color: #fff;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      margin-top: 0.8rem;
-      cursor: pointer;
-    }
-
     .footer {
       text-align: center;
       font-size: 0.9rem;
@@ -189,101 +147,66 @@
     <img src="logo-cekinsight.png" alt="Cekinsight Logo">
     <strong>Cekinsight</strong>
   </div>
-  <nav>
-    <a href="/">Home</a>
+  <button class="nav-toggle" onclick="toggleNav()">☰</button>
+  <nav class="nav-links" id="navMenu">
+    <a href="/" class="lang-en">Home</a>
+    <a href="/" class="lang-id" style="display:none">Beranda</a>
     <a href="#apps">Apps</a>
     <a href="#ai">Agentic AI</a>
-    <a href="https://market.cekinsight.com">Login</a>
+    <a href="https://market.cekinsight.com" class="lang-en">Login</a>
+    <a href="https://market.cekinsight.com" class="lang-id" style="display:none">Masuk</a>
+    <select onchange="switchLang(this.value)">
+      <option value="en">🇬🇧 EN</option>
+      <option value="id">🇮🇩 ID</option>
+    </select>
   </nav>
 </header>
 
 <section class="hero">
-  <h1>Strategic Clarity, Powered by Agentic AI</h1>
-  <p>Cekinsight delivers curated insights and intelligent systems across market, business, and life—designed for thinkers, builders, and decision-makers.</p>
+  <h1 class="lang-en">Strategic Clarity, Powered by Agentic AI</h1>
+  <h1 class="lang-id" style="display:none">Kejelasan Strategis, Didukung oleh Agentic AI</h1>
+  <p class="lang-en">Cekinsight delivers curated insights and intelligent systems across market, business, and life—designed for thinkers, builders, and decision-makers.</p>
+  <p class="lang-id" style="display:none">Cekinsight menyajikan insight terkurasi dan sistem cerdas di bidang pasar, bisnis, dan kehidupan—dirancang untuk para pemikir, pembangun, dan pengambil keputusan.</p>
 </section>
 
 <div class="apps" id="apps">
   <div class="app-card">
     <img src="icon-market.png" alt="Market Icon">
     <h3>Market</h3>
-    <p>Signals & strategy for market participants</p>
-    <a href="https://market.cekinsight.com">Go to Market →</a>
+    <p class="lang-en">Signals & strategy for market participants</p>
+    <p class="lang-id" style="display:none">Sinyal dan strategi untuk pelaku pasar</p>
+    <a href="https://market.cekinsight.com">→</a>
   </div>
   <div class="app-card">
     <img src="icon-business.png" alt="Business Icon">
     <h3>Business</h3>
-    <p>Growth playbooks & startup intelligence</p>
-    <a href="https://business.cekinsight.com">Go to Business →</a>
+    <p class="lang-en">Growth playbooks & startup intelligence</p>
+    <p class="lang-id" style="display:none">Strategi pertumbuhan & intelijen startup</p>
+    <a href="https://business.cekinsight.com">→</a>
   </div>
   <div class="app-card">
     <img src="icon-life.png" alt="Life Icon">
     <h3>Life</h3>
-    <p>Blueprints for clarity, balance, and purpose</p>
-    <a href="https://life.cekinsight.com">Go to Life →</a>
+    <p class="lang-en">Blueprints for clarity, balance, and purpose</p>
+    <p class="lang-id" style="display:none">Panduan untuk kejernihan, keseimbangan, dan tujuan</p>
+    <a href="https://life.cekinsight.com">→</a>
   </div>
 </div>
-
-<section class="agent-preview" id="ai">
-  <h2>Try the Agentic AI Experience</h2>
-  <p>Ask anything across market, business, or life. This is your personal insight assistant.</p>
-  <div class="agent-box">
-    <div class="controls">
-      <select>
-        <option selected disabled>Insight Layer</option>
-        <option>Market</option>
-        <option>Business</option>
-        <option>Life</option>
-      </select>
-      <select>
-        <option selected disabled>Output Depth</option>
-        <option>Brief</option>
-        <option>Balanced</option>
-        <option>In-Depth</option>
-      </select>
-    </div>
-
-    <input type="text" placeholder="Ask AI anything..." />
-    <button>Start</button>
-
-    <div class="toggles">
-      <label><input type="checkbox" id="agenticToggle" /> Enable Agentic Mode</label>
-      <label><input type="checkbox" id="memoryToggle" disabled /> Enable Insight Memory</label>
-    </div>
-
-    <div class="memory-alert" id="memoryAlert">
-      <strong>🔒 Sign in to use Insight Memory</strong><br/>
-      This feature is available for Pro users only.<br/>
-      <button onclick="window.location.href='/login'">Sign In & Upgrade</button>
-    </div>
-  </div>
-</section>
 
 <div class="footer">
   © 2025 Cekinsight — Powered by proprietary insight engine
 </div>
 
 <script>
-  const agenticToggle = document.getElementById('agenticToggle');
-  const memoryToggle = document.getElementById('memoryToggle');
-  const memoryAlert = document.getElementById('memoryAlert');
-
-  agenticToggle.addEventListener('change', function () {
-    if (this.checked) {
-      memoryToggle.disabled = false;
-    } else {
-      memoryToggle.checked = false;
-      memoryToggle.disabled = true;
-      memoryAlert.style.display = 'none';
-    }
+function switchLang(lang) {
+  document.querySelectorAll('[class^="lang-"]').forEach(el => {
+    el.style.display = el.classList.contains(`lang-${lang}`) ? 'block' : 'none';
   });
+}
 
-  memoryToggle.addEventListener('change', function () {
-    if (this.checked) {
-      memoryAlert.style.display = 'block';
-    } else {
-      memoryAlert.style.display = 'none';
-    }
-  });
+function toggleNav() {
+  document.getElementById('navMenu').classList.toggle('show');
+}
 </script>
 
 </body>
