@@ -132,6 +132,55 @@
       text-decoration: none;
     }
 
+    .agent-preview {
+      background: #fafafa;
+      padding: 2rem;
+      border-top: 1px solid #ddd;
+      text-align: center;
+    }
+
+    .agent-box {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      padding: 1.5rem;
+      max-width: 680px;
+      margin: auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .agent-box input {
+      width: 100%;
+      padding: 0.7rem;
+      font-size: 1rem;
+      margin: 1rem 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    .controls {
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .toggles {
+      margin: 1rem auto;
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    .toggles label {
+      display: block;
+      margin: 0.5rem 0;
+    }
+
+    .toggles input[type="checkbox"] {
+      margin-right: 0.6rem;
+      transform: scale(1.1);
+    }
+
     .footer {
       text-align: center;
       font-size: 0.9rem;
@@ -193,6 +242,37 @@
   </div>
 </div>
 
+<section class="agent-preview" id="ai">
+  <h2 class="lang-en">Try the Agentic AI Experience</h2>
+  <h2 class="lang-id" style="display:none">Coba Pengalaman Agentic AI</h2>
+  <p class="lang-en">Ask anything across market, business, or life. This is your personal insight assistant.</p>
+  <p class="lang-id" style="display:none">Tanyakan apa saja tentang market, bisnis, atau kehidupan. Ini asisten insight pribadi Anda.</p>
+
+  <div class="agent-box">
+    <div class="controls">
+      <select>
+        <option selected disabled>Insight Layer</option>
+        <option>Market</option>
+        <option>Business</option>
+        <option>Life</option>
+      </select>
+      <select>
+        <option selected disabled>Output Depth</option>
+        <option>Brief</option>
+        <option>Balanced</option>
+        <option>In-Depth</option>
+      </select>
+    </div>
+    <input type="text" placeholder="Ask AI anything..." />
+    <button>Start</button>
+
+    <div class="toggles">
+      <label><input type="checkbox" id="agenticToggle" /> Enable Agentic Mode</label>
+      <label><input type="checkbox" id="memoryToggle" disabled /> Enable Insight Memory</label>
+    </div>
+  </div>
+</section>
+
 <div class="footer">
   © 2025 Cekinsight — Powered by proprietary insight engine
 </div>
@@ -207,7 +287,16 @@ function switchLang(lang) {
 function toggleNav() {
   document.getElementById('navMenu').classList.toggle('show');
 }
-</script>
 
+document.getElementById('agenticToggle').addEventListener('change', function () {
+  const memoryToggle = document.getElementById('memoryToggle');
+  if (this.checked) {
+    memoryToggle.disabled = false;
+  } else {
+    memoryToggle.checked = false;
+    memoryToggle.disabled = true;
+  }
+});
+</script>
 </body>
 </html>
