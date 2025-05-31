@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +15,6 @@
       --select-bg: #e0e0e0;
       --select-text: #000;
     }
-
     body.light {
       --bg-color: #f9f9f9;
       --text-color: #000;
@@ -27,7 +25,6 @@
       --select-bg: #f0f0f0;
       --select-text: #000;
     }
-
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
@@ -40,11 +37,9 @@
       word-spacing: normal;
       letter-spacing: normal;
     }
-
     .emoji {
       font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
     }
-
     header {
       background: var(--segment-bg);
       color: var(--text-color);
@@ -79,12 +74,10 @@
       background: #04d1c1;
       color: #000;
     }
-
     .hero {
       padding: 3rem 2rem 1rem;
       text-align: center;
     }
-
     .segments {
       display: flex;
       justify-content: center;
@@ -118,7 +111,6 @@
     .segment:hover {
       background: #2a2a2a;
     }
-
     .cta {
       text-align: center;
       margin-top: 3rem;
@@ -140,7 +132,6 @@
       font-size: 1rem;
       cursor: pointer;
     }
-
     .prompt-section {
       max-width: 900px;
       margin: 2rem auto 4rem;
@@ -158,7 +149,6 @@
     .prompt-box {
       position: relative;
     }
-
     textarea {
       width: 100%;
       height: 160px;
@@ -205,12 +195,10 @@
       font-family: 'Segoe UI', sans-serif;
       text-transform: none; /* hilangkan capslock */
     }
-
     .mode-toggle.on {
       background: linear-gradient(to right, #04d1c1, #51a2e6);
       color: white;
     }
-
     .prompt-controls {
       display: flex;
       gap: 1rem;
@@ -230,14 +218,12 @@
       font-size: 0.95rem;
       min-width: 140px;
     }
-
     .footer {
       text-align: center;
       font-size: 0.9rem;
       padding: 2rem 1rem;
       color: #888;
     }
-
     @media (max-width: 640px) {
       .prompt-controls {
         flex-direction: column;
@@ -346,8 +332,14 @@
 </div>
 
 <script>
-  document.getElementById("themeToggle").addEventListener("click", () => {
-    document.body.classList.toggle("light");
+  const themeBtn = document.getElementById("themeToggle");
+  themeBtn.addEventListener("click", () => {
+    const isLight = document.body.classList.toggle("light");
+    if (isLight) {
+      themeBtn.classList.add("on"); // nyalakan hijau
+    } else {
+      themeBtn.classList.remove("on"); // kembalikan default
+    }
   });
 
   document.getElementById("langEnToggle").addEventListener("click", () => {
