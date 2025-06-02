@@ -3,7 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="Content-Language" content="en">
+  <meta name="robots" content="noindex, nofollow"/>
+  <meta name="googlebot" content="noindex, nofollow"/>
+  <meta property="og:title" content="Cekinsight – Curated Strategic Intelligence">
+  <meta property="og:description" content="Strategic insights for life, business, and markets.">
+  <meta property="og:image" content="https://cekinsight.com/og-image.png">
+  <meta property="og:url" content="https://cekinsight.com">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://cekinsight.com/">
+  <link rel="icon" href="cekinsight-favicon.ico" type="image/x-icon" />
+  <link rel="icon" type="image/png" sizes="32x32" href="cekinsight-favicon-32x32.png" />
+
   <title>Cekinsight – Agentic Insight Platform</title>
+
+  <script>
+   if (window.location.hostname.includes("github.io")) {
+     window.location.href = "https://cekinsight.com";
+   }
+  </script>
+
   <style>
     :root {
       --bg-color: #121212;
@@ -41,6 +61,9 @@
       font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
     }
     header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
       background: var(--segment-bg);
       color: var(--text-color);
       padding: 1rem 2rem;
