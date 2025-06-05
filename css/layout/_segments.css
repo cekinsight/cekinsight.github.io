@@ -1,0 +1,11 @@
+.segments {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+}
+.segments__list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 2rem 1rem 1rem;
+}
