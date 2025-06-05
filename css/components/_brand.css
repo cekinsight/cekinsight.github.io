@@ -1,0 +1,11 @@
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.brand__logo {
+  height: 1.75rem;
+}
+.brand__name {
+  font-weight: bold;
+}
