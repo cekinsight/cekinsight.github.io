@@ -167,14 +167,14 @@
     .header__brand {
       display: flex;
       align-items: center;
-      padding-top: 0.15rem;
+      padding-top: 0.2rem;
       gap: 0.5rem;
       cursor: pointer;
     }
     .header__logo {
       height: 2.5rem;
       display: block;
-      margin-top: 0.15rem;
+      margin-top: 0.1rem;
     }
     .header__name {
       font-size: 1rem;
@@ -964,9 +964,23 @@
         // Klik tombol toggle → hanya buka/tutup dropdown
         insightToggleBtn?.addEventListener("click", (e) => {
           e.stopPropagation();
-          const isExpanded = insightDropdown.classList.toggle("is-visible");
-          insightToggleBtn.setAttribute("aria-expanded", String(isExpanded));
+          const isNowVisible = insightDropdown.classList.toggle("is-visible");
+          insightToggleBtn.setAttribute("aria-expanded", String(isNowVisible));
+
+          if (!isNowVisible) {
+            // Jika dropdown ditutup via toggle, evaluasi checkbox
+            const anyChecked = Array.from(insightOptions)
+              .filter(o => o !== insightSelectAll)
+              .some(o => o.checked);
+
+            if (anyChecked) {
+              InsightMode.activate();
+            } else {
+              InsightMode.deactivate();
+            }
+          }
         });
+
 
         // Select All → centang semua, toggle ON, tutup dropdown
         insightSelectAll?.addEventListener("change", () => {
