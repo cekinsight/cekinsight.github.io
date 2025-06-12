@@ -86,7 +86,7 @@
       min-height: 100vh;
     }
     main {
-      flex: 1 0 auto;
+      flex: 1;
     }
 
     /* ======== Variables ======== */
@@ -170,13 +170,14 @@
       width: auto;
     }
     .header__name {
-      font-size: 1.2rem;
+      font-size: 1rem;
       font-weight: 600;
       line-height: 1;
     }
     .header__toggles {
       display: flex;
       gap: 0.5rem;
+      flex-shrink: 0;
     }
     
     /* ======== Hero ======== */
@@ -248,11 +249,11 @@
       background: var(--segment-bg);
       color: var(--text-color);
       text-align: center;
-      padding: 3rem 1rem 4rem;
+      padding: 2rem 1rem 3rem;
       border-radius: 1rem;
       box-shadow: var(--shadow-card);
-      margin: 3rem auto;
-      max-width: 48rem;
+      margin: 2rem auto;
+      max-width: 48.75rem;
     }
     .cta__title {
       font-size: 1.75rem;
@@ -300,9 +301,12 @@
       background: var(--segment-bg);
       border-radius: 1rem;
       padding: 2rem;
+      padding-bottom: 6rem;
       box-shadow: var(--shadow-card);
       text-align: left;
       position: relative;
+      overflow: visible;
+      margin-bottom: 10rem;
     }
     .prompt__title {
       font-size: 1.5rem;
@@ -376,7 +380,10 @@
       align-items: stretch;
     }
     .prompt__dropdown--output {
+      bottom: auto;
+      top: calc(100% + 0.25rem);
       right: 0;
+      z-index: 999;
     }
     .prompt__dropdown.is-visible {
       opacity: 1;
@@ -402,6 +409,19 @@
       gap: 0.5rem;
       margin-top: 0.5rem;
     }
+    .prompt__dropdown-button {
+      background: var(--segment-border);
+      color: var(--text-color);
+      padding: 0.4rem 0.8rem;
+      border-radius: 0.625rem;
+      font-size: 0.85rem;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .prompt__dropdown-button:hover {
+      background: var(--segment-hover-bg);
+    }
 
     /* ======== Prompt Icon Buttons ======== */
     .prompt__icon-buttons {
@@ -415,7 +435,9 @@
       display: inline-block;
     }
     .prompt__icon {
+      width: 2.5rem;
       height: 2.5rem;
+      aspect-ratio: 1 / 1;
       background: var(--segment-border); /* atau var(--segment-hover-bg) jika ingin abu gelap */
       color: var(--text-color);
       padding: 0.5rem;
@@ -423,6 +445,9 @@
       border: none;
       cursor: pointer;
       transition: background 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .prompt__icon:hover {
       background: var(--segment-hover-bg);
@@ -524,6 +549,13 @@
       color: var(--button-text-color) !important; /* atau var(--text-color) jika lebih cocok */
       border-color: transparent !important;
     }
+    .toggle--lang,
+    .toggle--theme {
+      height: 2rem;
+      font-size: 0.75rem;
+      padding: 0.3rem 0.8rem;
+    }
+
 
   /* ================= UTILS ================= */
     /* ======== Visibility ======== */
@@ -568,9 +600,8 @@
 
     /* === layout/_header.css === */
     @media (min-width: 40rem) {
-      .header__toggles {
-        flex-direction: row;
-        gap: 0.5rem;
+      .header__name {
+        font-size: 1.2rem;
       }
     }
 
@@ -633,6 +664,7 @@
         font-size: 0.9rem;
       }
     }
+
   </style>
 </head>
   
@@ -742,8 +774,8 @@
               <hr class="prompt__dropdown-separator" />
 
               <div class="prompt__dropdown-actions">
-                <button type="button" class="button prompt__icon" id="insightOk">OK</button>
-                <button type="button" class="button prompt__icon" id="insightReset">Reset All</button>
+                <button type="button" class="button prompt__dropdown-button" id="insightOk">OK</button>
+                <button type="button" class="button prompt__dropdown-button" id="insightReset">Reset All</button>
               </div>
             </div>
 
@@ -783,7 +815,7 @@
               </div>
           
               <!-- Upload Icon -->
-              <button type="button" class="button prompt__icon" title="Upload (Login required)" aria-label="Upload">
+              <button type="button" class="button prompt__icon" title="Upload (Login required)" aria-label="Upload" id="uploadBtn">
                 <svg aria-hidden="true" fill="none" role="img" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
@@ -876,7 +908,7 @@
     const outputDetails = document.getElementById("outputLengthDetails");
     const promptInput = document.getElementById("promptInput");
     const uploadBtn = document.querySelector("[aria-label='Upload']");
-    const isSignedIn = false;
+    const isSignedIn = true; // Ubah menjadi false jika upload icon hanya aktif jika sudah login
 
     // === MODULE: INSIGHT MODE ===
     const InsightMode = {
@@ -1045,11 +1077,18 @@
     });
 
     // === DISABLE UPLOAD IF NOT SIGNED IN ===
-    if (!isSignedIn && uploadBtn) {
-      uploadBtn.disabled = true;
-      uploadBtn.style.opacity = "0.5";
-      uploadBtn.style.cursor = "not-allowed";
-    }
+    if (isSignedIn && uploadBtn) {
+              uploadBtn.disabled = false;
+              uploadBtn.style.opacity = "1";
+              uploadBtn.style.cursor = "pointer";
+              uploadBtn.addEventListener("click", () => {
+                  window.open("https://tally.so/r/cekinsight-waitlist", "_blank", "noopener,noreferrer");
+              });
+          } else if (uploadBtn) {
+              uploadBtn.disabled = true;
+              uploadBtn.style.opacity = "0.5";
+              uploadBtn.style.cursor = "not-allowed";
+          }
 
     // === DEFAULT LANGUAGE ===
     document.documentElement.lang = "en";
