@@ -75,10 +75,10 @@
       vertical-align: baseline;
     }
     html, body {
+      margin: 0;
+      padding: 0;
       height: 100%;
       overflow-x: hidden;
-      display: flex;
-      flex-direction: column;
     }
     body {
       display: flex;
@@ -149,30 +149,39 @@
   /* ================= LAYOUT ================= */
     /* ======== Header ======== */
     .header {
+      width: 100%;
+      box-sizing: border-box;
       position: sticky;
       top: 0;
       z-index: 1000;
       background: var(--segment-bg);
       color: var(--text-color);
-      padding: 1rem 2rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
     }
     .header__brand {
       display: flex;
       align-items: center;
+      padding-top: 0.15rem;
       gap: 0.5rem;
       cursor: pointer;
     }
     .header__logo {
       height: 2.5rem;
-      width: auto;
+      display: block;
+      margin-top: 0.15rem;
     }
     .header__name {
       font-size: 1rem;
       font-weight: 600;
       line-height: 1;
+      display: flex;
+      align-items: center;
     }
     .header__toggles {
       display: flex;
@@ -301,12 +310,12 @@
       background: var(--segment-bg);
       border-radius: 1rem;
       padding: 2rem;
-      padding-bottom: 6rem;
       box-shadow: var(--shadow-card);
       text-align: left;
       position: relative;
       overflow: visible;
       margin-bottom: 10rem;
+      padding-bottom: 6rem;
     }
     .prompt__title {
       font-size: 1.5rem;
@@ -380,10 +389,16 @@
       align-items: stretch;
     }
     .prompt__dropdown--output {
-      bottom: auto;
+      position: absolute;
       top: calc(100% + 0.25rem);
       right: 0;
       z-index: 999;
+      width: 18rem;
+      max-width: 95vw;
+      padding: 1rem;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      box-sizing: border-box;
     }
     .prompt__dropdown.is-visible {
       opacity: 1;
@@ -459,31 +474,46 @@
     }
 
     /* ======== Prompt Output Length ======== */
+    .prompt__output-length-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
     .prompt__output-length-label {
       font-weight: 600;
-      font-family: monospace;
+      font-family: inherit;
       font-size: 0.9rem;
-      margin-bottom: 0.25rem;
-      display: block;
+      padding: 0.1rem 0;
+      color: var(--text-color);
+      display: inline-block;
+      vertical-align: middle;
+      margin-bottom: 0;
+      line-height: 1.5rem;
     }
     .prompt__output-length-current {
       background: var(--segment-hover-bg);
-      padding: 0.25rem 0.75rem;
+      padding: 0.3rem 0.8rem;
       border-radius: 1rem;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
+      font-weight: bold;
+      color: var(--text-color);
       display: inline-block;
-      margin-bottom: 0.75rem;
+      vertical-align: middle;
+      margin-bottom: 0;
+      line-height: 1.5rem;
     }
     .prompt__output-length-range {
       width: 100%;
       margin-bottom: 0.5rem;
+      accent-color: var(--toggle-on-bg);
     }
     .prompt__output-length-scale {
       display: flex;
       justify-content: space-between;
       font-size: 0.75rem;
       color: var(--footer-muted-color);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
     }
     .prompt__output-length-details {
       font-size: 0.85rem;
@@ -491,19 +521,25 @@
       opacity: 0.85;
     }
     .prompt__output-length-details strong {
-      display: block;
+      display: inline-block;
       font-weight: 600;
       margin-bottom: 0.25rem;
     }
 
     /* ======== Footer ======== */
     .footer {
+      width: 100%;
+      box-sizing: border-box;
       text-align: center;
-      padding: 2rem 1rem;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
       font-size: 0.9rem;
       background: var(--segment-bg);
       color: var(--text-color);
       flex-shrink: 0;
+      
     }
     .footer__text {
       color: var(--footer-muted-color);
@@ -525,10 +561,12 @@
     /* ======== Toggles ======== */
     .toggle {
       height: 2.5rem;
-      display: inline-flex;
+      line-height: 1;
+      display: flex;
       align-items: center;
+      justify-content: center;
       gap: 0.5rem;
-      padding: 0.5rem 1.2rem;
+      padding: 0.3rem 0.8rem;
       border-radius: 1.25rem;
       font-size: 0.9rem;
       font-weight: 500;
@@ -600,6 +638,9 @@
 
     /* === layout/_header.css === */
     @media (min-width: 40rem) {
+      .header__logo {
+        height: 2.5rem;
+      }
       .header__name {
         font-size: 1.2rem;
       }
@@ -624,7 +665,6 @@
       }
       .segments__card {
         width: 12.5rem;
-        margin: 0;
       }
     }
 
@@ -645,7 +685,8 @@
     /* === layout/_prompt.css === */
     @media (min-width: 40rem) {
       .prompt__container {
-        padding-bottom: 3.5rem;
+        margin-bottom: 8rem;
+        padding-bottom: 3rem;
       }
       .prompt__input-footer {
         gap: 0.5rem;
@@ -656,15 +697,18 @@
       .prompt__dropdown {
         min-width: 13rem;
       }
+      .prompt__dropdown--output {
+        max-height: 60vh;
+        overflow-y: auto;
+      }
     }
-
+   
     /* === layout/_footer.css === */
     @media (min-width: 40rem) {
       .footer {
         font-size: 0.9rem;
       }
     }
-
   </style>
 </head>
   
@@ -792,8 +836,11 @@
 
                 <!-- Output Length Dropdown -->
                 <div class="prompt__dropdown prompt__dropdown--output" id="outputLengthDropdown">
-                  <label class="prompt__output-length-label">Output Length</label>
-                  <div class="prompt__output-length-current" id="outputLengthValue">Detailed</div>
+                  <div class="prompt__output-length-header">
+                    <label class="prompt__output-length-label">Output Length</label>
+                    <div class="prompt__output-length-current" id="outputLengthValue">Detailed</div>
+                  </div>
+
                   <input 
                     type="range"
                     min="0"
@@ -803,17 +850,18 @@
                     class="prompt__output-length-range"
                     id="outputLengthRange"
                   />
+
                   <div class="prompt__output-length-scale">
                     <span>Concise</span>
                     <span>Infinite</span>
                   </div>
+
                   <div class="prompt__output-length-details" id="outputLengthDetails">
-                    <strong>Detailed</strong> ~ 50k words<br/>
+                    <strong>Detailed</strong> ~ 50k words<br />
                     <span>In-depth and informative. Ideal for technical articles, proposals, or tutorials.</span>
                   </div>
                 </div>
-              </div>
-          
+
               <!-- Upload Icon -->
               <button type="button" class="button prompt__icon" title="Upload (Login required)" aria-label="Upload" id="uploadBtn">
                 <svg aria-hidden="true" fill="none" role="img" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
