@@ -3,21 +3,43 @@
 <html lang="en" id="htmlTag">
 
 <head>
-  <!-- Document Metadata & SEO -->
+  <!-- Page Title -->
+  <title id="pageTitle">Cekinsight – Strategic Intelligence for Market, Business, and Life</title>
+  
+  <!-- Metadata Bahasa Inggris for Global SEO -->
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
   <meta name="googlebot" content="noindex, nofollow" />
-  <meta name="description" content="Join Cekinsight to access AI-powered insights for your business, market, and life decisions." />
-  <meta name="keywords" content="ai agent, strategic insight, startup tools, market signals, cekinsight" />
+  <meta name="description" content="Cekinsight delivers curated insights and intelligent systems across market, business, and life — helping you move forward with clarity." />
+  <meta name="keywords" content="strategic insight, market signals, business strategy, life clarity and purpose, intelligent assistant, cekinsight" />
   <meta name="author" content="Cekinsight Team" />
   <link rel="canonical" href="https://cekinsight.com/" />
   
-  <!-- Open Graph Metadata for Social Sharing -->
-  <meta property="og:title" content="Cekinsight – AI Agent Insight Platform" />
-  <meta property="og:description" content="Strategic insights for life, business, and markets — powered by AI agent." />
+  <!-- Open Graph Metadata Bahasa Inggris for Global Social Sharing -->
+  <meta property="og:title" content="Cekinsight – Strategic Intelligence for Market, Business, and Life" />
+  <meta property="og:description" content="Access curated insights and intelligent tools to help you navigate trends, opportunities, and decisions with clarity." />
   <meta property="og:image" content="https://cekinsight.com/og-image.png" />
-  <meta property="og:image:alt" content="Cekinsight logo with agentic insight branding" />
+  <meta property="og:image:alt" content="Cekinsight logo with strategic insight branding" />
+  <meta property="og:url" content="https://cekinsight.com" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Metadata Bahasa Indonesia for Local SEO -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="googlebot" content="noindex, nofollow" />
+  <meta name="description" content="Cekinsight menghadirkan insight terkurasi dan sistem cerdas di market, bisnis, dan kehidupan — membantu Anda melangkah dengan lebih jelas." />
+  <meta name="keywords" content="insight strategis, sinyal pasar, strategi bisnis, kejelasan dan tujuan hidup, asisten cerdas, cekinsight" />
+  <meta name="author" content="Tim Cekinsight" />
+  <link rel="canonical" href="https://cekinsight.com/" />
+
+  <!-- Open Graph Metadata Bahasa Indonesia for Local Social Sharing -->
+  <meta property="og:title" content="Cekinsight – Insight Strategis untuk Market, Business, dan Kehidupan" />
+  <meta property="og:description" content="Akses insight terkurasi dan sistem cerdas untuk membantu Anda menavigasi tren, peluang, dan keputusan dengan lebih jelas." />
+  <meta property="og:image" content="https://cekinsight.com/og-image.png" />
+  <meta property="og:image:alt" content="Logo Cekinsight dengan branding insight strategis" />
   <meta property="og:url" content="https://cekinsight.com" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -40,9 +62,6 @@
   <link rel="manifest" href="/site.webmanifest" />
   <link rel="shortcut icon" href="/cekinsight-favicon.ico" />
 
-  <!-- Page Title -->
-  <title>Cekinsight | Strategic AI Agent for Business, Market, Life</title>
-
   <!-- Redirect GitHub Pages to Primary Domain -->
   <script>
     if (window.location.hostname.includes("github.io")) {
@@ -52,8 +71,7 @@
 
   <!-- Internal CSS Styling (Scoped for MVP) -->
   <style>
-  /* ================= BASE ================= */
-    /* ======== Reset ======== */
+    /* ===== BASE: Reset ===== */
     html, body, div, span, applet, object, iframe,
     h1, h2, h3, h4, h5, h6, p, blockquote, pre,
     a, abbr, acronym, address, big, cite, code,
@@ -79,83 +97,110 @@
       padding: 0;
       height: 100%;
       overflow-x: hidden;
-    }
-    body {
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
     main {
-      flex: 1;
+      flex: 1 0 auto;
+      padding-bottom: 2rem;
     }
 
-    /* ======== Variables ======== */
+    /* ===== BASE: Variables ===== */
     :root {
-      --bg-color: #121212;
-      --text-color: #ffffff;
-      --segment-bg: #1e1e1e;
-      --segment-border: #2c2c2c;
-      --segment-hover-bg: #3a3a3a;
-      --textarea-bg: #e0e0e0;
-      --textarea-text: #333333;
-      --button-bg: #00d3b8;
-      --button-hover-bg: #04c1ac;
-      --button-text-color: #000000;
-      --footer-muted-color: #888888;
-      --toggle-bg: rgba(255, 255, 255, 0.2);
-      --toggle-on-bg: linear-gradient(to right, #04d1c1, #51a2e6);
-      --toggle-color: #ffffff;
-      --toggle-border: rgba(255, 255, 255, 0.3);
-      --toggle-hover-bg: rgba(255, 255, 255, 0.35);
-      --toggle-hover-color: #ffffff;
-      --toggle-hover-border: rgba(255, 255, 255, 0.25);
-      --shadow-lg: 0 3px 10px rgba(0, 0, 0, 0.3);
+      /* === BASE: Variables - Colors === */
+      --color-primary: #00d3b8;
+      --color-secondary: #51a2e6;
+      --color-muted: #888888;
+
+      /* === BASE: Variables - Text === */
+      --text-primary: #ffffff;
+      --text-secondary: #cccccc;
+      --text-muted: #888888;
+
+      /* === BASE: Variables - Backgrounds === */
+      --bg-main: #121212;
+      --bg-segment: #1e1e1e;
+      --bg-segment-hover: #2a2a2a;
+      --bg-textarea: #2a2a2a;
+      --bg-dropdown: #2a2a2a;
+      --bg-button: #444444;
+      --bg-button-hover: #555555;
+      --bg-badge: #333333;
+
+      /* === BASE: Variables - Borders === */
+      --border-default: #2c2c2c;
+      --border-dropdown: #444444;
+
+      /* === BASE: Variables - Shadows === */
       --shadow-card: 0 0 0.375rem rgba(0, 0, 0, 0.2);
-    }
-    body.light {
-      --bg-color: #f9f9f9;
-      --text-color: #000000;
-      --segment-bg: #ffffff;
-      --segment-border: #cccccc;
-      --segment-hover-bg: #f1f1f1;
-      --textarea-bg: #f0f0f0;
-      --textarea-text: #000000;
-      --button-bg: #00c6a6;
-      --button-hover-bg: #03b59a;
-      --button-text-color: #000000;
-      --footer-muted-color: #666666;
-      --toggle-bg: rgba(0, 0, 0, 0.1);
-      --toggle-on-bg: linear-gradient(to right, #00a5b0, #468cd8);
-      --toggle-color: #000000;
-      --toggle-border: rgba(0, 0, 0, 0.2);
-      --toggle-hover-bg: rgba(0, 0, 0, 0.35);
-      --toggle-hover-color: #000000;
-      --toggle-hover-border: rgba(0, 0, 0, 0.25);
-      --shadow-lg: 0 3px 10px rgba(0, 0, 0, 0.1);
-      --shadow-card: 0 0 0.375rem rgba(0, 0, 0, 0.05);
+      --shadow-dropdown: 0 6px 14px rgba(0, 0, 0, 0.15);
+      --shadow-lg: 0 3px 10px rgba(0, 0, 0, 0.3);
+
+      /* === BASE: Variables - Toggle === */
+      --toggle-bg: rgba(255, 255, 255, 0.2);
+      --toggle-on-bg: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+      --toggle-color: #ffffff;
+      --toggle-hover-bg: rgba(255, 255, 255, 0.35);
+      --toggle-hover-border: rgba(255, 255, 255, 0.25);
     }
 
-    /* ======== Typography ======== */
+    body.light {
+      /* === BASE: Variables - Colors === */  
+      --color-primary: #00c6a6;
+      --color-secondary: #468cd8;
+      --color-muted: #666666;
+
+      /* === BASE: Variables - Text === */
+      --text-primary: #000000;
+      --text-secondary: #333333;
+      --text-muted: #666666;
+
+      /* === BASE: Variables - Backgrounds === */
+      --bg-main: #f9f9f9;
+      --bg-segment: #ffffff;
+      --bg-segment-hover: #f5f5f5;
+      --bg-textarea: #f0f0f0;
+      --bg-dropdown: #ffffff;
+      --bg-button: #e0e0e0;
+      --bg-button-hover: #d0d0d0;
+      --bg-badge: #eeeeee;
+
+      /* === BASE: Variables - Borders === */
+      --border-default: #cccccc;
+      --border-dropdown: #dddddd;
+
+      /* === BASE: Variables - Shadows === */
+      --shadow-card: 0 0 0.375rem rgba(0, 0, 0, 0.05);
+      --shadow-dropdown: 0 6px 14px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+      /* === BASE: Variables - Toggle === */
+      --toggle-bg: rgba(0, 0, 0, 0.1);
+      --toggle-on-bg: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+      --toggle-color: #000000;
+      --toggle-hover-bg: rgba(0, 0, 0, 0.35);
+      --toggle-hover-border: rgba(0, 0, 0, 0.25);
+    }
+
+    /* ===== BASE: Typography ===== */
     body {
       font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      word-spacing: normal;
-      letter-spacing: normal;
-      background: var(--bg-color);
-      color: var(--text-color);
+      background: var(--bg-main);
+      color: var(--text-primary);
     }
 
-  /* ================= LAYOUT ================= */
-    /* ======== Header ======== */
+    /* ===== LAYOUT: Header ===== */
     .header {
       width: 100%;
       box-sizing: border-box;
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: var(--segment-bg);
-      color: var(--text-color);
+      background: var(--bg-segment);
+      color: var(--text-primary);
       padding-top: 0.75rem;
       padding-bottom: 0.75rem;
       padding-left: 1rem;
@@ -167,14 +212,14 @@
     .header__brand {
       display: flex;
       align-items: center;
-      padding-top: 0.2rem;
+      padding-top: 0;
       gap: 0.5rem;
       cursor: pointer;
     }
     .header__logo {
       height: 2.5rem;
       display: block;
-      margin-top: 0.1rem;
+      margin-top: 0;
     }
     .header__name {
       font-size: 1rem;
@@ -188,26 +233,69 @@
       gap: 0.5rem;
       flex-shrink: 0;
     }
+    .header__toggle-lang,
+    .header__toggle-theme {
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.3rem 0.8rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      border-radius: 1.25rem;
+      background: var(--bg-button);
+      color: var(--text-primary);
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    .header__toggle-lang:hover,
+    .header__toggle-theme:hover {
+      background: var(--bg-segment-hover);
+    }
+    .header__toggle-lang.is-active,
+    .header__toggle-theme.is-active {
+      background: var(--toggle-on-bg);
+      color: var(--toggle-color);
+      border-color: transparent;
+    }
+
+    @media (min-width: 40rem) {
+      .header__name {
+        font-size: 1.2rem;
+      }
+    }
     
-    /* ======== Hero ======== */
+    /* ===== LAYOUT: Hero ===== */
     .hero {
+      max-width: 40rem;
+      margin: 0 auto;
       padding: 3rem 2rem 1rem;
       text-align: center;
     }
     .hero__title {
-      font-size: 2rem;
+      font-size: 1.75rem;
       font-weight: 600;
       margin: 0;
       line-height: 1.2;
     }
     .hero__description {
       margin-top: 1rem;
-      font-size: 1.1rem;
-      color: var(--text-color);
+      font-size: 1rem;
+      color: var(--text-secondary);
       opacity: 0.85;
     }
+
+    @media (min-width: 40rem) {
+      .hero__title {
+        font-size: 2rem;
+      }
+      .hero__description {
+        font-size: 1.125rem;
+      }
+    }
     
-    /* ======== Segments ======== */
+    /* ===== LAYOUT: Segments ===== */
     .segments {
       padding: 2rem 1rem;
       margin-bottom: 2rem;
@@ -220,8 +308,8 @@
       padding: 2rem 1rem 1rem;
     }
     .segments__card {
-      background: var(--segment-bg);
-      border: 1px solid var(--segment-border);
+      background: var(--bg-segment);
+      border: 1px solid var(--border-default);
       border-radius: 0.75rem;
       padding: 1rem 1.5rem;
       box-shadow: var(--shadow-card);
@@ -233,30 +321,40 @@
       color: inherit;
     }
     .segments__card:hover {
-      background: var(--segment-hover-bg);
-      text-decoration: none;
+      background: var(--bg-segment-hover);
+      transform: scale(1.05);
+    }
+    .segments__card:hover .segments__icon {
+      transform: scale(1.05);
     }
     .segments__icon {
       height: 2.5rem;
       margin-bottom: 0.75rem;
+      transition: transform 0.3s ease;
     }
     .segments__title {
       font-size: 1.1rem;
       font-weight: 600;
-      color: var(--text-color);
-      text-decoration: none;
+      color: var(--text-primary);
     }
     .segments__desc {
       font-size: 0.95rem;
-      color: var(--text-color);
-      text-decoration: none;
+      color: var(--text-secondary);
       opacity: 0.85;
     }
 
-    /* ======== CTA ======== */
+    @media (min-width: 40rem) {
+      .segments__list {
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+      }
+    }
+
+    /* ===== LAYOUT: CTA ===== */
     .cta {
-      background: var(--segment-bg);
-      color: var(--text-color);
+      background: var(--bg-segment);
+      color: var(--text-primary);
       text-align: center;
       padding: 2rem 1rem 3rem;
       border-radius: 1rem;
@@ -278,24 +376,36 @@
     }
     .cta__description {
       font-size: 1.1rem;
-      color: var(--text-color);
+      color: var(--text-secondary);
       opacity: 0.9;
       margin-bottom: 1.5rem;
     }
     .cta__button {
-      background: var(--button-bg);
-      color: var(--button-text-color);
+      background: var(--toggle-on-bg);
+      color: var(--text-primary);
       font-weight: bold;
       padding: 0.75rem 2rem;
+      border: 0;
       border-radius: 999px;
       font-size: 1rem;
+      text-decoration: none;
       transition: background 0.3s ease, color 0.3s ease;
     }
-    .cta__button:hover {
-      background: var(--button-hover-bg);
+
+    @media (min-width: 40rem) {
+      .cta__title {
+        font-size: 1.75rem;
+      }
+      .cta__description {
+        margin-bottom: 2.25rem;
+      }
+      .cta__button {
+        padding: 0.7rem 2rem;
+        font-size: 1rem;
+      }
     }
 
-    /* ======== Prompt ======== */
+    /* ===== LAYOUT: Prompt ===== */
     .prompt {
       max-width: 56.25rem;
       margin: 2rem auto;
@@ -304,18 +414,18 @@
       position: relative;
       z-index: 5;
     }
-    .prompt__container {
+    .prompt__body {
       display: flex;
       flex-direction: column;
-      background: var(--segment-bg);
+      background: var(--bg-segment);
       border-radius: 1rem;
       padding: 2rem;
+      padding-bottom: 2rem;
+      margin-bottom: 3rem;
       box-shadow: var(--shadow-card);
       text-align: left;
       position: relative;
       overflow: visible;
-      margin-bottom: 10rem;
-      padding-bottom: 6rem;
     }
     .prompt__title {
       font-size: 1.5rem;
@@ -329,7 +439,7 @@
       margin-bottom: 1.5rem;
       text-align: center;
     }
-    .prompt__input-area {
+    .prompt__input {
       display: flex;
       flex-direction: column;
     }
@@ -337,19 +447,19 @@
       width: 100%;
       min-height: 10rem;
       line-height: 1.5rem;
-      overflow-y: auto;
       resize: none;
+      overflow-y: auto;
       font-size: 1rem;
       font-family: 'Courier New', Courier, monospace;
       border: none;
       border-radius: 0.625rem;
       padding: 1.2rem 1.5rem;
-      background: var(--textarea-bg);
-      color: var(--textarea-text);
+      background: var(--bg-textarea);
+      color: var(--text-secondary);
       box-sizing: border-box;
       transition: background 0.3s ease, color 0.3s ease;
     }
-    .prompt__input-footer {
+    .prompt__footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -366,14 +476,25 @@
       position: relative;
     }
 
-    /* ======== Prompt Dropdowns ======== */
+    @media (min-width: 40rem) {
+      .prompt__body {
+        margin-bottom: 6rem;
+        padding-bottom: 2.5rem;
+      }
+      .prompt__footer {
+        gap: 0.5rem;
+      }
+    }
+
+    /* ===== LAYOUT: Prompt - Dropdowns ===== */
     .prompt__dropdown {
       position: absolute;
       top: calc(100% + 0.25rem);
-      background: var(--segment-bg);
-      border: 1px solid var(--segment-border);
+      background: var(--bg-dropdown);
+      border: 1px solid var(--border-dropdown);
       border-radius: 0.75rem;
-      box-shadow: var(--shadow-card);
+      box-shadow: var(--shadow-dropdown);
+      color: var(--text-primary);
       padding: 0.75rem 1rem;
       min-width: 14rem;
       z-index: 99;
@@ -389,8 +510,6 @@
       align-items: stretch;
     }
     .prompt__dropdown--output {
-      position: absolute;
-      top: calc(100% + 0.25rem);
       right: 0;
       z-index: 999;
       width: 18rem;
@@ -409,14 +528,14 @@
       display: block;
       padding: 0.4rem 0;
       font-size: 0.9rem;
-      color: var(--text-color);
+      color: var(--text-primary);
       opacity: 0.85;
       cursor: pointer;
     }
     .prompt__dropdown-separator {
       margin: 0.5rem 0;
       border: 0;
-      border-top: 1px solid var(--segment-border);
+      border-top: 1px solid var(--border-default);
     }
     .prompt__dropdown-actions {
       display: flex;
@@ -425,8 +544,8 @@
       margin-top: 0.5rem;
     }
     .prompt__dropdown-button {
-      background: var(--segment-border);
-      color: var(--text-color);
+      background: var(--border-default);
+      color: var(--text-primary);
       padding: 0.4rem 0.8rem;
       border-radius: 0.625rem;
       font-size: 0.85rem;
@@ -435,17 +554,27 @@
       transition: background 0.3s ease;
     }
     .prompt__dropdown-button:hover {
-      background: var(--segment-hover-bg);
+      background: var(--bg-segment-hover);
     }
 
-    /* ======== Prompt Icon Buttons ======== */
-    .prompt__icon-buttons {
+    @media (min-width: 40rem) {
+      .prompt__dropdown {
+        min-width: 13rem;
+      }
+      .prompt__dropdown--output {
+        max-height: 60vh;
+        overflow-y: auto;
+      }
+    }
+
+    /* ===== LAYOUT: Prompt - Icons ===== */
+    .prompt__icons {
       display: flex;
       gap: 0.5rem;
       flex-wrap: wrap;
       margin-left: auto;
     }
-    .prompt__settings-button {
+    .prompt__settings {
       position: relative;
       display: inline-block;
     }
@@ -453,19 +582,19 @@
       width: 2.5rem;
       height: 2.5rem;
       aspect-ratio: 1 / 1;
-      background: var(--segment-border); /* atau var(--segment-hover-bg) jika ingin abu gelap */
-      color: var(--text-color);
+      background: var(--bg-button);
+      color: var(--text-primary);
       padding: 0.5rem;
       border-radius: 0.625rem;
       border: none;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, color 0.3s ease;
       display: flex;
       align-items: center;
       justify-content: center;
     }
     .prompt__icon:hover {
-      background: var(--segment-hover-bg);
+      background: var(--bg-segment-hover);
     }
     .prompt__icon svg {
       width: 1.25rem;
@@ -473,7 +602,13 @@
       stroke: currentColor;
     }
 
-    /* ======== Prompt Output Length ======== */
+    @media (min-width: 40rem) {
+      .prompt__icons {
+        gap: 0.5rem;
+      }
+    }
+
+    /* ===== LAYOUT: Prompt - Output Length ===== */
     .prompt__output-length-header {
       display: flex;
       justify-content: space-between;
@@ -484,20 +619,20 @@
       font-weight: 600;
       font-family: inherit;
       font-size: 0.9rem;
-      padding: 0.1rem 0;
-      color: var(--text-color);
+      padding: 0.5rem 0;
+      color: var(--text-primary);
       display: inline-block;
       vertical-align: middle;
       margin-bottom: 0;
       line-height: 1.5rem;
     }
     .prompt__output-length-current {
-      background: var(--segment-hover-bg);
+      background: var(--bg-badge);
       padding: 0.3rem 0.8rem;
       border-radius: 1rem;
       font-size: 0.8rem;
       font-weight: bold;
-      color: var(--text-color);
+      color: var(--text-primary);
       display: inline-block;
       vertical-align: middle;
       margin-bottom: 0;
@@ -512,12 +647,12 @@
       display: flex;
       justify-content: space-between;
       font-size: 0.75rem;
-      color: var(--footer-muted-color);
+      color: var(--text-muted);
       margin-bottom: 0.75rem;
     }
     .prompt__output-length-details {
       font-size: 0.85rem;
-      color: var(--text-color);
+      color: var(--text-primary);
       opacity: 0.85;
     }
     .prompt__output-length-details strong {
@@ -526,28 +661,8 @@
       margin-bottom: 0.25rem;
     }
 
-    /* ======== Footer ======== */
-    .footer {
-      width: 100%;
-      box-sizing: border-box;
-      text-align: center;
-      padding-top: 1.5rem;
-      padding-bottom: 1.5rem;
-      padding-left: 1rem;
-      padding-right: 1rem;
-      font-size: 0.9rem;
-      background: var(--segment-bg);
-      color: var(--text-color);
-      flex-shrink: 0;
-      
-    }
-    .footer__text {
-      color: var(--footer-muted-color);
-    }
-
-  /* ================= COMPONENTS ================= */
-    /* ======== Bottons ======== */
-    .button {
+    /* ===== COMPONENTS: Prompt Botton ===== */
+    .prompt__button {
       display: inline-flex;
       justify-content: center;
       align-items: center;
@@ -555,11 +670,17 @@
       cursor: pointer;
       font: inherit;
       border: none;
-      transition: background 0.3s ease, color 0.3s ease;
+      border-radius: 0.625rem;
+      background: var(--bg-button);
+      color: var(--text-primary);
+      transition: background 0.3s ease, color 0.3s ease;      
+    }
+    .prompt__button:hover {
+      background: var(--bg-button-hover);
     }
 
-    /* ======== Toggles ======== */
-    .toggle {
+    /* ===== COMPONENTS: Prompt Toggle ===== */
+    .prompt__toggle {
       height: 2.5rem;
       line-height: 1;
       display: flex;
@@ -570,33 +691,47 @@
       border-radius: 1.25rem;
       font-size: 0.9rem;
       font-weight: 500;
-      background: var(--segment-border);
-      color: var(--text-color);
+      background: var(--bg-button);
+      color: var(--text-primary);
       border: none;
       white-space: nowrap;
       cursor: pointer;
       transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
     }
-    .toggle:hover {
-      background: var(--segment-hover-bg);
-      color: var(--toggle-hover-color);
-      border-color: var(--toggle-hover-border);
+    .prompt__toggle:hover {
+      background: var(--bg-button-hover);
     }
-    .toggle--on {
+    .prompt__toggle--on {
       background: var(--toggle-on-bg) !important; 
-      color: var(--button-text-color) !important; /* atau var(--text-color) jika lebih cocok */
+      color: var(--toggle-color) !important;
       border-color: transparent !important;
     }
-    .toggle--lang,
-    .toggle--theme {
-      height: 2rem;
-      font-size: 0.75rem;
-      padding: 0.3rem 0.8rem;
+
+    /* ===== Footer ===== */
+    .footer {
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      font-size: 0.9rem;
+      background: var(--bg-segment);
+      color: var(--text-primary);
+      flex-shrink: 0;
+    }
+    .footer__text {
+      color: var(--text-muted);
     }
 
+    @media (min-width: 40rem) {
+      .footer {
+        font-size: 0.9rem;
+      }
+    }
 
-  /* ================= UTILS ================= */
-    /* ======== Visibility ======== */
+    /* ===== UTILS: Visibility ===== */
     .visually-hidden {
       position: absolute !important;
       height: 0.0625rem;
@@ -606,7 +741,7 @@
       white-space: nowrap;
     }
 
-    /* ======== Transitions ======== */
+    /* ===== UTILS: Transitions ===== */
     .transition {
       transition: all 0.3s ease;
     }
@@ -617,7 +752,7 @@
       transition: color 0.3s ease;
     }
 
-    /* ======== Spacing ======== */
+    /* ===== UTILS: Spacing ===== */
     .mt-sm { margin-top: 0.5rem; }
     .mt-md { margin-top: 1rem; }
     .mt-lg { margin-top: 2rem; }
@@ -630,85 +765,6 @@
     .py-sm { padding-top: 0.5rem; padding-bottom: 0.5rem; }
     .py-md { padding-top: 1rem; padding-bottom: 1rem; }
     .py-lg { padding-top: 2rem; padding-bottom: 2rem; }
-
-    /* === GLOBAL MEDIA QUERY MAP === */
-
-    /* Breakpoints based on rem (root = 16px) */
-    /* sm: 40rem = 640px, md: 48rem = 768px, lg: 64rem = 1024px */
-
-    /* === layout/_header.css === */
-    @media (min-width: 40rem) {
-      .header__logo {
-        height: 2.5rem;
-      }
-      .header__name {
-        font-size: 1.2rem;
-      }
-    }
-
-    /* === layout/_hero.css === */
-    @media (min-width: 40rem) {
-      .hero__title {
-        font-size: 2rem;
-      }
-      .hero__description {
-        font-size: 1.125rem;
-      }
-    }
-
-    /* === layout/_segments.css === */
-    @media (min-width: 40rem) {
-      .segments__list {
-        flex-direction: row;
-        justify-content: center;
-        gap: 2rem;
-      }
-      .segments__card {
-        width: 12.5rem;
-      }
-    }
-
-    /* === layout/_cta.css === */
-    @media (min-width: 40rem) {
-      .cta__title {
-        font-size: 1.75rem;
-      }
-      .cta__description {
-        font-size: 1.1rem;
-      }
-      .cta__button {
-        padding: 0.7rem 2rem;
-        font-size: 1rem;
-      }
-    }
-
-    /* === layout/_prompt.css === */
-    @media (min-width: 40rem) {
-      .prompt__container {
-        margin-bottom: 8rem;
-        padding-bottom: 3rem;
-      }
-      .prompt__input-footer {
-        gap: 0.5rem;
-      }
-      .prompt__icon-buttons {
-        gap: 0.5rem;
-      }
-      .prompt__dropdown {
-        min-width: 13rem;
-      }
-      .prompt__dropdown--output {
-        max-height: 60vh;
-        overflow-y: auto;
-      }
-    }
-   
-    /* === layout/_footer.css === */
-    @media (min-width: 40rem) {
-      .footer {
-        font-size: 0.9rem;
-      }
-    }
   </style>
 </head>
   
@@ -717,16 +773,16 @@
   <header class="header header--theme-transition" role="navigation">
     <!-- Brand Logo and Title -->
     <div class="header__brand">
-      <img src="logo-cekinsight.png" alt="Cekinsight Logo" class="header__logo"
+      <img src="logo-cekinsight.png" alt="" class="header__logo"
            onerror="this.src='fallback-logo.png'; this.onerror=null;" />
       <strong class="header__name">Cekinsight</strong>
     </div>
 
     <!-- Language & Theme Toggles -->
     <div class="header__toggles">
-      <button type="button" id="langEnToggle" class="toggle toggle--lang toggle--on" aria-label="Switch to English">EN</button>
-      <button type="button" id="langIdToggle" class="toggle toggle--lang" aria-label="Switch to Bahasa Indonesia">ID</button>
-      <button type="button" id="themeToggle" class="toggle toggle--theme" aria-label="Toggle dark or light mode">☀</button>
+      <button id="langEnToggle" class="header__toggle-lang is-active" aria-label="Switch to English" aria-pressed="true">EN</button>
+      <button id="langIdToggle" class="header__toggle-lang" aria-label="Switch to Bahasa Indonesia" aria-pressed="false">ID</button>
+      <button id="themeToggle" class="header__toggle-theme" aria-label="Toggle dark or light mode" aria-pressed="false">☀</button>
     </div>
   </header>
 
@@ -741,10 +797,10 @@
     <!-- Hero Section: Tagline and Description -->
     <section class="hero hero--theme-transition" role="region" aria-labelledby="heroTitle" aria-describedby="heroDesc">
       <h1 class="hero__title" id="heroTitle">
-        Strategic Clarity, Powered by AI Agent
+        Empowering You with Strategic Intelligence
       </h1>
       <p class="hero__description" id="heroDesc">
-        Cekinsight delivers curated insights and intelligent systems across market, business, and life.
+        Cekinsight delivers curated insights and intelligent systems across market, business, and life — helping you move forward with clarity.
       </p>
     </section>
 
@@ -756,25 +812,25 @@
         <!-- Market Segment -->
         <a class="segments__card" id="segment-market" href="https://market.cekinsight.com" target="_blank"
            rel="noopener noreferrer" aria-describedby="segment-market-desc">
-          <img src="icon-market.png" alt="Market Icon" class="segments__icon" />
+          <img src="icon-market.png" alt="Market segment icon for trends and pattern discovery" class="segments__icon" />
           <h3 class="segments__title">Market</h3>
-          <p class="segments__desc" id="segment-market-desc">Crypto, stocks, and macro signals</p>
+          <p class="segments__desc" id="segment-market-desc">Understand market dynamics through trends and financial signals</p>
         </a>
 
         <!-- Business Segment -->
         <a class="segments__card" id="segment-business" href="https://business.cekinsight.com" target="_blank"
            rel="noopener noreferrer" aria-describedby="segment-business-desc">
-          <img src="icon-business.png" alt="Business Icon" class="segments__icon" />
+          <img src="icon-business.png" alt="Business segment icon for strategic growth and thinking" class="segments__icon" />
           <h3 class="segments__title">Business</h3>
-          <p class="segments__desc" id="segment-business-desc">Startup growth & founder strategy</p>
+          <p class="segments__desc" id="segment-business-desc">Navigate business challenges and growth opportunities</p>
         </a>
 
         <!-- Life Segment -->
         <a class="segments__card" id="segment-life" href="https://life.cekinsight.com" target="_blank"
            rel="noopener noreferrer" aria-describedby="segment-life-desc">
-          <img src="icon-life.png" alt="Life Icon" class="segments__icon" />
+          <img src="icon-life.png" alt="Life segment icon for clarity and personal alignment" class="segments__icon" />
           <h3 class="segments__title">Life</h3>
-          <p class="segments__desc" id="segment-life-desc">Balance, clarity, and purpose insights</p>
+          <p class="segments__desc" id="segment-life-desc">Gain clarity, balance, and meaningful direction</p>
         </a>
       </div>
     </section>
@@ -782,53 +838,56 @@
     <!-- CTA (Call To Action) Section -->
     <section class="cta cta--theme-transition" aria-labelledby="ctaTitle" role="region">
       <h2 class="cta__title" id="ctaTitle">
-        <span class="cta__emoji">🚀</span> Get Notified at Launch
+        <span class="cta__emoji">🚀</span> Be the First to Experience Cekinsight
       </h2>
       <p class="cta__description" id="ctaDesc">
-        Be the first to explore Cekinsight’s intelligent tools.
+        Get early access to curated insights and intelligent systems — tailored for strategic advantage.
       </p>
       <a href="https://tally.so/r/cekinsight-waitlist" target="_blank" rel="noopener noreferrer"
-         class="button cta__button" id="ctaBtn" aria-describedby="ctaDesc">
+         class="cta__button" id="ctaBtn" aria-describedby="ctaDesc">
         Join the Waitlist
       </a>
     </section>
 
     <section class="prompt prompt--theme-transition">
-      <h2 class="prompt__title" id="promptTitle">Try the AI Agent Experience</h2>
-      <p class="prompt__description" id="promptDesc">Ask anything or delegate a task.</p>
+      <h2 class="prompt__title" id="promptTitle">Explore Strategic Insight</h2>
+      <p class="prompt__description" id="promptDesc">Ask questions, explore ideas, or delegate tasks — all powered by intelligent assistance.</p>
 
-      <div class="prompt__container">
-        <!-- Prompt Input Area -->
-        <div class="prompt__input-area">
+      <div class="prompt__body">
+        <!-- Prompt Input -->
+        <div class="prompt__input">
         
           <!-- Text Area -->
-          <textarea class="prompt__textarea" id="promptInput" placeholder="Ask AI anything..."></textarea>
+          <textarea class="prompt__textarea" id="promptInput" placeholder="Ask your strategic question..."></textarea>
 
-          <!-- Prompt Input Footer -->
-          <div class="prompt__input-footer">
+          <!-- Prompt Footer -->
+          <div class="prompt__footer">
           
             <!-- Prompt Insight Toggle -->
             <div class="prompt__insight-toggle">
-              <button type="button" class="toggle" id="insightToggleBtn" aria-expanded="false">Insight Mode Off</button>
+              <button type="button" class="prompt__toggle" id="insightToggle" aria-expanded="false">Insight Mode Off</button>
+              
               <div class="prompt__dropdown prompt__dropdown--insight" id="insightDropdown">
                 <label class="prompt__dropdown-label"><input type="checkbox" class="insight-option" id="insightSelectAll" /> Select All</label>
                 <label class="prompt__dropdown-label"><input type="checkbox" class="insight-option" value="trend" /> Trend Analysis</label>
                 <label class="prompt__dropdown-label"><input type="checkbox" class="insight-option" value="pattern" /> Pattern Detection</label>
                 <label class="prompt__dropdown-label"><input type="checkbox" class="insight-option" value="outlier" /> Outlier Highlight</label>
-              <hr class="prompt__dropdown-separator" />
+                
+                <hr class="prompt__dropdown-separator" />
 
-              <div class="prompt__dropdown-actions">
-                <button type="button" class="button prompt__dropdown-button" id="insightOk">OK</button>
-                <button type="button" class="button prompt__dropdown-button" id="insightReset">Reset All</button>
+                <div class="prompt__dropdown-actions">
+                  <button type="button" class="prompt__button prompt__dropdown-button" id="insightOk">OK</button>
+                  <button type="button" class="prompt__button prompt__dropdown-button" id="insightReset">Reset All</button>
+                </div>
               </div>
             </div>
 
-            <!-- Prompt Icon Buttons -->
-            <div class="prompt__icon-buttons">
+            <!-- Prompt Icons -->
+            <div class="prompt__icons">
         
               <!-- Settings Icon -->
-              <div class="prompt__settings-button">
-                <button type="button" class="button prompt__icon" title="Settings" aria-label="Settings" id="outputLengthToggleBtn">
+              <div class="prompt__settings">
+                <button type="button" class="prompt__button prompt__icon" title="Settings" aria-label="Settings" id="outputLengthSettings">
                   <svg aria-hidden="true" fill="none" role="img" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" stroke-linecap="round" stroke-linejoin="round"></path>
                   </svg>
@@ -863,14 +922,14 @@
                 </div>
 
               <!-- Upload Icon -->
-              <button type="button" class="button prompt__icon" title="Upload (Login required)" aria-label="Upload" id="uploadBtn">
+              <button type="button" class="prompt__button prompt__icon" title="Upload (Login required)" aria-label="Upload" id="uploadBtn">
                 <svg aria-hidden="true" fill="none" role="img" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
               </button>
           
               <!-- Start Icon -->
-              <button type="button" class="button prompt__icon" title="Start" aria-label="Start"
+              <button type="button" class="prompt__button prompt__icon" title="Start" aria-label="Start"
                    onclick="window.open('https://tally.so/r/cekinsight-waitlist', '_blank', 'noopener,noreferrer')">
                 <svg aria-hidden="true" fill="none" role="img" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path d="m7.49 12-3.75 3.75m0 0 3.75 3.75m-3.75-3.75h16.5V4.499" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -885,87 +944,183 @@
 
   <footer class="footer footer--theme-transition" role="contentinfo">
     <p class="footer__text">
-      © 2025 Cekinsight — Powered by proprietary insight engine
+      © 2025 Cekinsight — Powered by proprietary intelligent systems and curated insight engines
     </p>
   </footer>
 </body>
 
 <script defer>
   document.addEventListener("DOMContentLoaded", () => {
-    // === THEME TOGGLE ===
-    const themeBtn = document.getElementById("themeToggle");
-    if (themeBtn) {
-      themeBtn.addEventListener("click", () => {
-        const isLight = document.body.classList.toggle("light");
-        themeBtn.classList.toggle("toggle--on", isLight);
-      });
+
+    // === LANGUAGE TOGGLE ELEMENT REFERENCES ===
+    const langEnToggle = document.getElementById("langEnToggle");
+    const langIdToggle = document.getElementById("langIdToggle");
+    const promptInput = document.getElementById("promptInput");
+
+    // === LANGUAGE TOGGLE ===
+    const setLanguage = (lang) => {
+      const isEnglish = lang === "en";
+
+      // Update tombol toggle
+      langEnToggle.classList.toggle("is-active", isEnglish);
+      langEnToggle.setAttribute("aria-pressed", String(isEnglish));
+      langIdToggle.classList.toggle("is-active", !isEnglish);
+      langIdToggle.setAttribute("aria-pressed", String(!isEnglish));
+
+      // Update atribut lang pada <html>
+      document.documentElement.lang = isEnglish ? "en" : "id";
+
+      // Update konten halaman
+      document.getElementById("pageTitle").textContent = isEnglish
+        ? "Cekinsight – Strategic Intelligence for Market, Business, and Life"
+        : "Cekinsight – Insight Strategis untuk Market, Business, dan Kehidupan";
+
+      document.getElementById("heroTitle").textContent = isEnglish
+        ? "Empowering You with Strategic Intelligence"
+        : "Memberdayakan Anda dengan Insight Strategis";
+
+      document.getElementById("heroDesc").textContent = isEnglish
+        ? "Cekinsight delivers curated insights and intelligent systems across market, business, and life — helping you move forward with clarity."
+        : "Cekinsight menghadirkan insight terkurasi dan sistem cerdas di market, bisnis, dan kehidupan — membantu Anda melangkah dengan lebih jelas.";
+
+      document.getElementById("segment-market-desc").textContent = isEnglish
+        ? "Understand market dynamics through trends and financial signals"
+        : "Pahami dinamika market melalui tren dan sinyal finansial";
+
+      document.getElementById("segment-business-desc").textContent = isEnglish
+        ? "Navigate business challenges and growth opportunities"
+        : "Atasi tantangan dan peluang dalam pertumbuhan bisnis";
+
+      document.getElementById("segment-life-desc").textContent = isEnglish
+        ? "Gain clarity, balance, and meaningful direction"
+        : "Dapatkan kejelasan, keseimbangan, dan arah yang bermakna";
+
+      document.getElementById("ctaTitle").textContent = isEnglish
+        ? "🚀 Be the First to Experience Cekinsight"
+        : "🚀 Jadi yang Pertama Mencoba Cekinsight";
+
+      document.getElementById("ctaDesc").textContent = isEnglish
+        ? "Get early access to curated insights and intelligent systems — tailored for strategic advantage."
+        : "Dapatkan akses awal ke insight terkurasi dan sistem cerdas — dirancang untuk keunggulan strategis.";
+
+      document.getElementById("ctaBtn").textContent = isEnglish
+        ? "Join the Waitlist"
+        : "Gabung Daftar Tunggu";
+
+      document.getElementById("promptTitle").textContent = isEnglish
+        ? "Explore Strategic Insight"
+        : "Jelajahi Insight Strategis";
+
+      document.getElementById("promptDesc").textContent = isEnglish
+        ? "Ask questions, explore ideas, or delegate tasks — all powered by intelligent assistance."
+        : "Ajukan pertanyaan, eksplorasi ide, atau delegasikan tugas — didukung oleh asisten cerdas.";
+
+      document.getElementById("promptInput").placeholder = isEnglish
+        ? "Ask your strategic question..."
+        : "Tanyakan hal strategis di sini...";
+
+      // Update metadata dan og secara dinamis
+      document
+        .querySelector("meta[name='description']")
+        .setAttribute(
+          "content",
+          isEnglish
+            ? "Cekinsight delivers curated insights and intelligent systems across market, business, and life — helping you move forward with clarity."
+            : "Cekinsight menghadirkan insight terkurasi dan sistem cerdas di market, bisnis, dan kehidupan — membantu Anda melangkah dengan lebih jelas."
+        );
+
+      document
+        .querySelector("meta[name='keywords']")
+        .setAttribute(
+          "content",
+          isEnglish
+            ? "strategic insight, market signals, business strategy, life clarity and purpose, intelligent assistant, cekinsight"
+            : "insight strategis, sinyal pasar, strategi bisnis, kejelasan dan tujuan hidup, asisten cerdas, cekinsight"
+        );
+
+      document
+        .querySelector("meta[property='og:title']")
+        .setAttribute(
+          "content",
+          isEnglish
+            ? "Cekinsight – Strategic Intelligence for Market, Business, and Life"
+            : "Cekinsight – Insight Strategis untuk Market, Business, dan Kehidupan"
+        );
+
+      document
+        .querySelector("meta[property='og:description']")
+        .setAttribute(
+          "content",
+          isEnglish
+            ? "Access curated insights and intelligent systems to help you navigate trends, opportunities, and decisions with clarity."
+            : "Akses insight terkurasi dan sistem cerdas untuk membantu Anda menavigasi tren, peluang, dan keputusan dengan lebih jelas."
+        );
+
+      document
+        .querySelector("meta[property='og:image:alt']")
+        .setAttribute(
+          "content",
+          isEnglish
+            ? "Cekinsight logo with strategic insight branding"
+            : "Logo Cekinsight dengan branding insight strategis"
+        );
+    };
+
+    // === AUTO DETECT LANGUAGE ON LOAD ===
+    const userLang = navigator.language || navigator.userLanguage;
+    if (userLang.startsWith("id")) {
+      setLanguage("id");
+    } else {
+      setLanguage("en");
     }
 
-    // === BILINGUAL TOGGLE ===
-    const langEnBtn = document.getElementById("langEnToggle");
-    const langIdBtn = document.getElementById("langIdToggle");
+    // === MANUAL LANGUAGE TOGGLE CLICK === 
+    langEnToggle?.addEventListener("click", () => setLanguage("en"));
+    langIdToggle?.addEventListener("click", () => setLanguage("id"));
 
-    if (langEnBtn && langIdBtn) {
-      langEnBtn.addEventListener("click", () => {
-        document.getElementById("heroTitle").textContent = "Strategic Clarity, Powered by AI Agent";
-        document.getElementById("heroDesc").textContent = "Cekinsight delivers curated insights and intelligent systems across market, business, and life.";
-        document.getElementById("segment-market-desc").textContent = "Crypto, stocks, and macro signals";
-        document.getElementById("segment-business-desc").textContent = "Startup growth & founder strategy";
-        document.getElementById("segment-life-desc").textContent = "Balance, clarity, and purpose insights";
-        document.getElementById("ctaTitle").textContent = "🚀 Get Notified at Launch";
-        document.getElementById("ctaDesc").textContent = "Be the first to explore Cekinsight’s intelligent tools.";
-        document.getElementById("ctaBtn").textContent = "Join the Waitlist";
-        document.getElementById("promptTitle").textContent = "Try the AI Agent Experience";
-        document.getElementById("promptDesc").textContent = "Ask anything or delegate a task.";
-        document.getElementById("promptInput").placeholder = "Ask AI anything...";
-        langEnBtn.classList.add("toggle--on");
-        langIdBtn.classList.remove("toggle--on");
-        document.documentElement.lang = "en";
-      });
+    // === THEME TOGGLE ELEMENT REFERENCES ===
+    const themeToggle = document.getElementById("themeToggle");
 
-      langIdBtn.addEventListener("click", () => {
-        document.getElementById("heroTitle").textContent = "Kejelasan Strategis, Digerakkan oleh Agent AI";
-        document.getElementById("heroDesc").textContent = "Cekinsight menghadirkan insight terkurasi dan sistem cerdas di market, bisnis, dan kehidupan.";
-        document.getElementById("segment-market-desc").textContent = "Sinyal crypto, saham, dan makro";
-        document.getElementById("segment-business-desc").textContent = "Pertumbuhan startup & strategi founder";
-        document.getElementById("segment-life-desc").textContent = "Keseimbangan, kejelasan, dan tujuan hidup";
-        document.getElementById("ctaTitle").textContent = "🚀 Dapatkan Notifikasi Peluncuran";
-        document.getElementById("ctaDesc").textContent = "Jadilah yang pertama menjelajahi alat cerdas dari Cekinsight.";
-        document.getElementById("ctaBtn").textContent = "Gabung Daftar Tunggu";
-        document.getElementById("promptTitle").textContent = "Coba Pengalaman Agent AI";
-        document.getElementById("promptDesc").textContent = "Tanyakan apa saja atau delegasikan tugas.";
-        document.getElementById("promptInput").placeholder = "Tanyakan AI apa saja...";
-        langEnBtn.classList.remove("toggle--on");
-        langIdBtn.classList.add("toggle--on");
-        document.documentElement.lang = "id";
-      });
-    }
+    // === AUTO DETECT THEME ON LOAD ===
+    let isLightTheme;
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const hour = new Date().getHours();
+    const isNight = hour >= 18 || hour < 6;
+    isLightTheme = !(prefersDark || isNight); // light jika tidak malam dan bukan dark mode OS
 
-    // === ELEMENT REFERENCES ===
-    const insightToggleBtn = document.getElementById('insightToggleBtn');
+    document.body.classList.toggle("light", isLightTheme);
+    themeToggle?.classList.toggle("is-active", isLightTheme);
+    themeToggle?.setAttribute("aria-pressed", String(isLightTheme));
+
+    // === MANUAL THEME TOGGLE CLICK ===
+    themeToggle?.addEventListener("click", () => {
+      const isLight = document.body.classList.toggle("light");
+      themeToggle.classList.toggle("is-active", isLight);
+      themeToggle.setAttribute("aria-pressed", String(isLight));
+    });
+
+    // === INSIGHT TOGGLE ELEMENT REFERENCES ===
+    const insightToggle = document.getElementById('insightToggle');
     const insightDropdown = document.getElementById('insightDropdown');
     const insightOptions = document.querySelectorAll('.insight-option');
     const insightSelectAll = document.getElementById('insightSelectAll');
     const insightReset = document.getElementById('insightReset');
     const insightOk = document.getElementById('insightOk');
-    const settingsBtn = document.querySelector("[aria-label='Settings']");
-    const outputLengthToggleBtn = document.getElementById("outputLengthToggleBtn");
-    const outputLengthDropdown = document.getElementById("outputLengthDropdown");
-    const outputRange = document.getElementById("outputLengthRange");
-    const outputValue = document.getElementById("outputLengthValue");
-    const outputDetails = document.getElementById("outputLengthDetails");
-    const promptInput = document.getElementById("promptInput");
-    const uploadBtn = document.querySelector("[aria-label='Upload']");
-    const isSignedIn = true; // Ubah menjadi false jika upload icon hanya aktif jika sudah login
 
-    // === MODULE: INSIGHT MODE ===
+    // === INSIGHT BUTTON CLICK ===
     const InsightMode = {
       init() {
+
         // Klik tombol toggle → hanya buka/tutup dropdown
-        insightToggleBtn?.addEventListener("click", (e) => {
+        insightToggle?.addEventListener("click", (e) => {
           e.stopPropagation();
+          
           const isNowVisible = insightDropdown.classList.toggle("is-visible");
-          insightToggleBtn.setAttribute("aria-expanded", String(isNowVisible));
+          insightToggle.setAttribute("aria-expanded", String(isNowVisible));
+
+          setTimeout(() => {
+            insightToggle.blur(); // hilangkan fokus visual
+          }, 100);
 
           if (!isNowVisible) {
             // Jika dropdown ditutup via toggle, evaluasi checkbox
@@ -981,8 +1136,7 @@
           }
         });
 
-
-        // Select All → centang semua, toggle ON, tutup dropdown
+        // Select All → centang semua, button ON, tutup dropdown
         insightSelectAll?.addEventListener("change", () => {
           const isChecked = insightSelectAll.checked;
           insightOptions.forEach(opt => {
@@ -1044,20 +1198,20 @@
       },
 
       activate() {
-        insightToggleBtn.classList.add("toggle--on");
-        insightToggleBtn.textContent = "Insight Mode On";
-        insightToggleBtn.setAttribute("aria-expanded", "false");
+        insightToggle.classList.add("prompt__toggle--on");
+        insightToggle.textContent = "Insight Mode On";
+        insightToggle.setAttribute("aria-expanded", "false");
       },
 
       deactivate() {
-        insightToggleBtn.classList.remove("toggle--on");
-        insightToggleBtn.textContent = "Insight Mode Off";
-        insightToggleBtn.setAttribute("aria-expanded", "false");
+        insightToggle.classList.remove("prompt__toggle--on");
+        insightToggle.textContent = "Insight Mode Off";
+        insightToggle.setAttribute("aria-expanded", "false");
       },
 
       hideDropdownOnly() {
         insightDropdown.classList.remove("is-visible");
-        insightToggleBtn.setAttribute("aria-expanded", "false");
+        insightToggle.setAttribute("aria-expanded", "false");
       },
 
       reset() {
@@ -1072,13 +1226,43 @@
       }
     };
 
-    // === OUTPUT LENGTH TOGGLE ===
-    outputLengthToggleBtn?.addEventListener("click", (e) => {
-      e.stopPropagation();
+    // === SETTINGS BUTTON ELEMENT REFERENCES ===
+    const settingsBtn = document.querySelector("[aria-label='Settings']");
+    const outputLengthSettings = document.getElementById("outputLengthSettings");
+    const outputLengthDropdown = document.getElementById("outputLengthDropdown");
+    const outputRange = document.getElementById("outputLengthRange");
+    const outputValue = document.getElementById("outputLengthValue");
+    const outputDetails = document.getElementById("outputLengthDetails");
 
-      const isOpen = outputLengthDropdown.classList.toggle("is-visible");
-      outputLengthToggleBtn.setAttribute("aria-expanded", String(isOpen));
-    });
+    // === SETTINGS ICON CLICK ===
+    const OutputLengthSettings = {
+      init () {
+
+        outputLengthSettings?.addEventListener("click", (e) => {
+          e.stopPropagation();
+
+          const isOpen = outputLengthDropdown.classList.toggle("is-visible");
+          outputLengthSettings.setAttribute("aria-expanded", String(isOpen));
+
+          setTimeout(() => {
+            outputLengthSettings.blur();
+          }, 100);
+        });
+
+        if (outputRange) {
+          this.update(outputRange.value);
+          outputRange.addEventListener("input", (e) => {
+            this.update(parseInt(e.target.value, 10));
+          });
+        }
+      }, 
+
+      update(index) {
+        const preset = presets[index];
+        outputValue.textContent = preset.name;
+        outputDetails.innerHTML = `<strong>${preset.name}</strong> ${preset.words}</br><span>${preset.desc}</span>`;
+      }
+    };
 
     // === PRESETS: OUTPUT LENGTH ===
     const presets = [
@@ -1097,31 +1281,20 @@
         outputDetails.innerHTML = `<strong>${preset.name}</strong> ${preset.words}<br/><span>${preset.desc}</span>`;
     };
 
-    if (outputRange) {
-      updateOutputLength(outputRange.value);
-      outputRange.addEventListener("input", (e) => {
-          updateOutputLength(parseInt(e.target.value, 10));
-      });
+    // === GLOBAL RESET TOGGLE & ICON FUNCTION ==
+    function resetIconColor(btn) {
+      btn.classList.remove("prompt__toggle--on");
+      btn.blur();
     }
 
     // === OUTSIDE CLICK HANDLER (global) ===
     document.addEventListener("click", (e) => {
       const t = e.target;
 
-      // === OUTPUT LENGTH SETTINGS ICON ===
+      // === INSIGHT MODE BUTTON ===
       if (
-          outputLengthToggleBtn &&
-          !outputLengthToggleBtn.contains(t) &&
-          !outputLengthDropdown.contains(t)
-      ) {
-          outputLengthDropdown.classList.remove("is-visible");
-          outputLengthToggleBtn.setAttribute("aria-expanded", "false");
-      }
-
-      // === INSIGHT MODE TOGGLE ===
-      if (
-          insightToggleBtn &&
-          !insightToggleBtn.contains(t) &&
+          insightToggle &&
+          !insightToggle.contains(t) &&
           !insightDropdown.contains(t)
       ) {
           const anyChecked = Array.from(insightOptions)
@@ -1136,27 +1309,54 @@
 
           InsightMode.hideDropdownOnly();
       }
+
+      // === OUTPUT LENGTH SETTINGS ICON ===
+      if (
+          outputLengthSettings &&
+          !outputLengthSettings.contains(t) &&
+          !outputLengthDropdown.contains(t)
+      ) {
+          outputLengthDropdown.classList.remove("is-visible");
+          outputLengthSettings.setAttribute("aria-expanded", "false");
+      }
     });
+
+    // === UPLOAD BUTTON ELEMENT REFERENCES ===
+    const uploadBtn = document.querySelector("[aria-label='Upload']");
+    const isSignedIn = true; // Ubah menjadi false jika upload icon hanya aktif jika sudah login
 
     // === DISABLE UPLOAD IF NOT SIGNED IN ===
     if (isSignedIn && uploadBtn) {
-              uploadBtn.disabled = false;
-              uploadBtn.style.opacity = "1";
-              uploadBtn.style.cursor = "pointer";
-              uploadBtn.addEventListener("click", () => {
-                  window.open("https://tally.so/r/cekinsight-waitlist", "_blank", "noopener,noreferrer");
-              });
-          } else if (uploadBtn) {
-              uploadBtn.disabled = true;
-              uploadBtn.style.opacity = "0.5";
-              uploadBtn.style.cursor = "not-allowed";
-          }
+      uploadBtn.disabled = false;
+      uploadBtn.style.opacity = "1";
+      uploadBtn.style.cursor = "pointer";
+      uploadBtn.addEventListener("click", () => {
+        window.open("https://tally.so/r/cekinsight-waitlist", "_blank", "noopener,noreferrer");
+        setTimeout(() => resetIconColor(uploadBtn), 300);
+      });
+    } else if (uploadBtn) {
+      uploadBtn.disabled = true;
+      uploadBtn.style.opacity = "0.5";
+      uploadBtn.style.cursor = "not-allowed";
+    }
+
+    // === START BUTTON ELEMENT REFERENCES ===
+    const startBtn = document.querySelector("[aria-label='Start']");
+
+    // === START ICON CLICK ===
+    if (startBtn) {
+      startBtn.addEventListener("click", () => {
+        window.open("https://tally.so/r/cekinsight-waitlist", "_blank", "noopener,noreferrer");
+        setTimeout(() => resetIconColor(startBtn), 300);
+      });
+    }
 
     // === DEFAULT LANGUAGE ===
     document.documentElement.lang = "en";
 
     // === INIT ===
     InsightMode.init();
+    OutputLengthSettings.init();
   });
 </script>
 </body>
